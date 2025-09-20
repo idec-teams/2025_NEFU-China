@@ -23,7 +23,7 @@ jobs:
       - run: bundle install || echo "No Gemfile"
 
       # 5. 构建 Jekyll 静态站
-      - run: jekyll build --destination ./_site
+      - run: bundle exec jekyll build --destination ./_site
 
       # 6. 推送 _site 到 gh-pages 分支
       - uses: peaceiris/actions-gh-pages@v3
