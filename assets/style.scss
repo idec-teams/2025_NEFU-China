@@ -8,19 +8,19 @@ body {
 
 /* === 鼠标指针自定义 === */
 body {
-    cursor: url("/assets/images/cursor.png") 2 2, auto;
+		cursor: url("{{ '/assets/images/cursor.png' | relative_url }}") 2 2, auto;
 }
 .navbar, .navbar a, .navbar .nav-link, .navbar .dropdown-item {
-  cursor: url('/assets/images/cursor.png'), pointer;
+cursor: url("{{ '/assets/images/cursor.png' | relative_url }}") 2 2, auto;
 }
 /* 按钮光标 */
 button, .btn {
-  cursor: url('/assets/images/cursor.png'), pointer;
+cursor: url("{{ '/assets/images/cursor.png' | relative_url }}") 2 2, auto;
 }
 
 /* 可选：链接光标 */
 a {
-  cursor: url('/assets/images/cursor.png'), pointer;
+cursor: url("{{ '/assets/images/cursor.png' | relative_url }}") 2 2, auto;
 }
 /* Hero Section 样式 */
 .hero {
@@ -50,8 +50,15 @@ a {
 }
 
 /* 背景图和动画 */
-.hero-bg1 { background-image: url('/assets/images/home-bg-text.png'); animation: float1 5s linear infinite; }
-.hero-bg2 { background-image: url('/assets/images/home-bg-start.png'); animation: float2 4s linear infinite; }
+.hero-bg1 {
+  background-image: url("{{ '/assets/images/home-bg-text.png' | relative_url }}");
+  animation: float1 5s linear infinite;
+}
+
+.hero-bg2 {
+  background-image: url("{{ '/assets/images/home-bg-start.png' | relative_url }}");
+  animation: float2 4s linear infinite;
+}
 
 .hero-content {
   position: absolute;
