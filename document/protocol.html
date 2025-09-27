@@ -1,0 +1,316 @@
+---
+layout: default
+title: Evolutionary Pathways
+---
+
+<style>
+* {
+	box-sizing: border-box; 
+	padding: 0;
+	margin: 0;
+}
+body {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	overflow-x: hidden;
+	flex-direction: column; /* 垂直布局 */
+	min-height: 100vh; /* 确保 body 至少占据视口高度 */
+	justify-content: flex-start; /* 从顶部开始排列内容 */
+	align-items: center; /* 中心对齐内容 */
+	background-color: #e3f4fc;
+	background-size: cover;
+	max-width: 100%;
+	/*font-family: Nunito-Reg, sans-serif;*/
+	font-weight: 400;
+	font-size: 18px;
+	/*font-family: Comic Sans Ms, sans-serif;*/
+	color: #000000;
+}
+img {
+	display: inline-block;
+	vertical-align: middle;
+	width: 100%;
+	height: auto;
+	margin: 0 auto;
+}
+.img2 {
+	display: inline-block;
+	margin: 0 auto;
+	text-align: center;
+	gap: 20px;
+	height: auto;
+}
+.container {/*框架*//*最外层盒子*/
+	display: flex;
+	width: 90vw;
+	height: auto;/*似乎这个值没用，会被撑大*//*要管*/
+	max-width: 90vw; /* 设置内容区域的最大宽度 */
+	background-color: transparent;
+	/*padding: 20px; /* 内容内边距 */
+	/*padding-top: 80px;/*80*/
+	box-sizing: border-box;
+	z-index: 2;
+	justify-content: center;  
+	align-items: center;  
+}
+
+.container_block{
+	margin: 0 auto;
+	display: flex;
+	align-items: flex-start;
+	padding: 2vw;
+	padding-top: 2vw;
+	border-radius: 1vw;
+	border: 2px solid #7fb4ea; 
+	backdrop-filter: blur(15px) saturate(130%); 
+
+}
+.container0{
+	width: 100%;  
+	height: auto;
+   /* max-width: 100vw; */
+	margin-top: 0vh;
+	margin-bottom: 0vh; 
+	align-items: center;
+	/*gap: 1vw;  must kill*/
+	z-index: 3;
+	background: #ffffff;
+	display: flex;
+	flex-direction: column;
+
+	justify-content: center;  
+	align-items: center;  
+
+}
+.container01{
+	width: 100%;
+	max-width: 70vw;
+	margin-left: 0vw;
+	align-items: center;
+	gap: 1vw;
+	margin-top: 1vw;
+	flex-direction: row;
+}
+.container02{
+	width: 100%;
+	/*max-width: 100vw;*/
+	margin-top: 2vw;
+	display: flex;
+	flex-direction: row;
+	gap: 3vw;
+}
+
+p {
+   
+	max-width: 60vw;
+	margin-top: 1vw;
+	font-size: 1.6vw; 
+	/*font-family: Comic Sans Ms, sans-serif;*/
+	text-align: justify;
+	font-style: normal;
+	line-height: normal;
+}
+
+.h1{
+	justify-content: center;
+	text-align: left;
+	max-width: 60vw;
+	margin-top:2vw;
+	font-size: 3.0vw;
+	font-weight: 600;
+	color: #35488f;
+
+	letter-spacing: 0.5vh;
+	text-shadow: 0.1vh 0.1vh 0 #000000, 0.2vh 0.2vh 0 #000000, 0.2vh 0.2vh 0 #000000;
+
+}
+.h2{
+	color: #7fb4ea;
+	text-align: left;
+	font-weight: 600;
+	font-size: 2.4vw;
+	margin-top:0.5vw;
+	margin-bottom: 0;
+	/*font-family: Montserrat-Mid; */
+
+}
+.h3{ 
+	text-align: center;
+	color: #000000;
+	margin-top: 2vh;
+	font-size: 1.8vw; 
+	/*font-family: Montserrat-Mid; */
+
+}
+@media (max-width: 1050px) {
+	.container {
+		margin-left: 0;
+		width: 90vw;
+		max-width: 90vw;
+	}
+	.broadside{
+		display: none;
+	}
+	.h1,h2,p,ol li{
+		max-width: 80vw;
+	}
+}
+:root {  
+    --content-width: 70vw; /* 文字块宽度 */  
+}  
+
+
+.toggle-button {  
+    width: var(--content-width);  
+    font-size: 1.5em;  
+    cursor: pointer;  
+    background-color: #7fb4ea;  
+    color: white;  
+    border: none;  
+    border-radius: 5px;  
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;  
+    padding: 2vw 4vw;  
+    margin-bottom: 10px;  
+}  
+
+.toggle-button:hover {  
+    background: linear-gradient(40deg, #0056b3, #007BFF);  
+    transform: translateY(2px);  
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);  
+}  
+
+.content {  
+
+    max-height: 0;  
+    transition: max-height 0.1s ease-out, opacity 0.5s ease-out, padding 0.5s ease-out;  
+    opacity: 0; /* 用于在收起时提供平滑过渡 */  
+    width: var(--content-width);  
+    background-color: #e3f4fc;  
+    border: 1px solid #ccc;  
+    border-radius: 5px;  
+    font-size: 1.0em;  
+    color: #333;  
+    padding: 0 15px; /* 初始时隐藏内边距 */  
+    box-sizing: border-box;  
+    display: none;
+}  
+
+.content.show {  
+    max-height: none; /* 实际上不设置具体高度，而是让内容自然展开 */  
+    opacity: 1;  
+    padding: 10px 15px; /* 展开时显示内边距 */  
+    transition: max-height 0.5s ease-out, opacity 0.5s ease-out, padding 0.5s ease-out;  
+    display: block;
+}  
+
+.content a{
+    font-size: 1.2em;
+}
+
+/* 添加一个过渡类，用于在内容高度变化前后暂时禁用过渡效果 */  
+.content.transition-none {  
+    transition: none;  
+}  
+</style>
+
+
+
+<section class="hero">
+  <img src="{{ '/assets/images/home-bg.png' | relative_url }}" alt="Photo 1">
+</section>
+
+<div class="container">
+        
+        <div class="container0 container_block">   
+            
+
+            <div class="container01 section1" id="side1" style="margin-bottom: 1vw;">
+                <div class="h1">Overview</div>
+                <p>Here are our protocols:
+                    This section shows details of the experiments that are not shown in detail in the notebook.
+                    (Click the block to view the hidden content)</p>
+            </div>
+
+
+            <button class="toggle-button">Connection</button>  
+            <div class="content">  
+                This protocol is used to connect two or more pieces of DNA together. For more detailed information, please <a href="/assets/docs/Connection.pdf" target="_blank">click on the link.</a>
+            </div>  
+  
+            <button class="toggle-button">Gel recovery</button>  
+            <div class="content">  
+                This protocol is used to recycle the correct tape from the recycled adhesive. For more detailed information, please <a href="/assets/docs/Gelrecovery.pdf" target="_blank">click on the link.</a>
+            </div>  
+           
+            <button class="toggle-button">Nucleic acid and protein electrophoresis</button>  
+            <div class="content">  
+                This protocol concludes two types of the electrophoresis used to detect target DNA or protein. For more detailed information, please <a href="/assets/docs/Nucleicacidandproteinelectrophoresis.pdf" target="_blank">click on the link.</a>
+            </div>  
+
+            <button class="toggle-button">PCR product purification</button>  
+            <div class="content">  
+                This protocol is used to purify PCR products (in case of single band detected by gel electrophoresis). For more detailed information, please <a href="/assets/docs/PCRproductpurification.pdf" target="_blank">click on the link.</a>
+            </div>  
+           
+            <button class="toggle-button">Plasmid DNA extraction</button>  
+            <div class="content">  
+                This protocol is used to extract plasmid DNA from <em>E. coli</em>. For more detailed information, please <a href="/assets/docs/PlasmidDNAextraction.pdf" target="_blank">click on the link.</a>
+            </div>  
+
+            <button class="toggle-button">Polymerase chain reaction</button>  
+            <div class="content">  
+                This protocol is used to amplify target DNA fragment for plasmid construction or other use. For more detailed information, please <a href="/assets/docs/Polymerasechainreaction.pdf" target="_blank">click on the link.</a>
+            </div>  
+
+            <button class="toggle-button">Preparation of electrocompetent cells</button>  
+            <div class="content">  
+                This protocol is used to prepare electrocompetent cells with high transformation efficiency. For more detailed information, please <a href="/assets/docs/Preparationofelectrocompetentcells.pdf" target="_blank">click on the link.</a>
+            </div>  
+
+            <button class="toggle-button">Restriction endonuclease reactions</button>  
+            <div class="content">  
+                This protocol is used to having restriction endonuclease reactions based on endonuclease by NEB. For more detailed information, please <a href="/assets/docs/Restrictionendonucleasereactions.pdf" target="_blank">click on the link.</a>
+            </div>  
+
+            <button class="toggle-button">Transformation</button>  
+            <div class="content">  
+                This protocol is used to transform plasmid DNA into competent cells by chemical method or electroporation. For more detailed information, please <a href="/assets/docs/Transformation.pdf" target="_blank">click on the link.</a>
+            </div>  
+
+            <button class="toggle-button">Enzyme digestion verification</button>  
+            <div class="content">  
+                This protocol is used to verify enzyme digestion in a DNA sample, please <a href="/assets/docs/Enzymedigestionverification.pdf" target="_blank">click on the link.</a>
+            </div>  
+
+            <button class="toggle-button">Genome-Wide Mutation</button>  
+            <div class="content">  
+                This protocol is used for Genome-Wide Mutation in <em>E. coli.</em>, please <a href="/assets/docs/Genome-Wide Mutation.pdf" target="_blank">click on the link.</a>
+            </div>  
+        </div>
+    </div>
+
+				
+<script>
+document.addEventListener('DOMContentLoaded', () => {  
+    const buttons = document.querySelectorAll('.toggle-button');  
+    const contents = document.querySelectorAll('.content');  
+
+    buttons.forEach((button, index) => {  
+        button.addEventListener('click', () => {  
+            const content = contents[index];  
+
+            // 暂时禁用过渡效果  
+            content.classList.add('transition-none');  
+
+            // 切换显示状态  
+            content.classList.toggle('show');  
+
+            setTimeout(() => {  
+                content.classList.remove('transition-none');  
+            }, 0);  
+        });  
+    });  
+});  
+</script>
