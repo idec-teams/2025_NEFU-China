@@ -1,5 +1,5 @@
 <header>
-		  <!-- Navbar -->
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand d-flex align-items-center" href="{{ '/' | relative_url }}">
@@ -18,8 +18,8 @@
               Team
             </a>
             <ul class="dropdown-menu" aria-labelledby="teamDropdown">
-              <li><a class="dropdown-item" href="#">Members</a></li>
-              <li><a class="dropdown-item" href="#">Attribution</a></li>
+              <li><a class="dropdown-item" href="{{ '/team/members/' | relative_url }}">Members</a></li>
+              <li><a class="dropdown-item" href="{{ '/team/attribution/' | relative_url }}">Attribution</a></li>
             </ul>
           </li>
 
@@ -29,24 +29,24 @@
               Project
             </a>
             <ul class="dropdown-menu" aria-labelledby="projectDropdown">
-              <li><a class="dropdown-item" href="#">Background</a></li>
-              <li><a class="dropdown-item" href="#">Design</a></li>
-              <li><a class="dropdown-item" href="#">Results</a></li>
-              <li><a class="dropdown-item" href="#">Report</a></li>
-              <li><a class="dropdown-item" href="#">Supplementary information</a></li>
+              <li><a class="dropdown-item" href="{{ '/project/background/' | relative_url }}">Background</a></li>
+              <li><a class="dropdown-item" href="{{ '/project/design/' | relative_url }}">Design</a></li>
+              <li><a class="dropdown-item" href="{{ '/project/results/' | relative_url }}">Results</a></li>
+              <li><a class="dropdown-item" href="{{ '/project/report/' | relative_url }}">Report</a></li>
+              <li><a class="dropdown-item" href="{{ '/project/supplementary/' | relative_url }}">Supplementary information</a></li>
             </ul>
           </li>
 
           <!-- Document 下拉菜单 -->
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="projectDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" id="documentDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Document
             </a>
-            <ul class="dropdown-menu" aria-labelledby="projectDropdown">
-              <li><a class="dropdown-item" href="#">Experiments</a></li>
-              <li><a class="dropdown-item" href="/document/notebook.html">Notebook</a></li>
-              <li><a class="dropdown-item" href="/document/safety.html">Safety</a></li>
-              <li><a class="dropdown-item" href="/document/protocol">Protocol</a></li>
+            <ul class="dropdown-menu" aria-labelledby="documentDropdown">
+              <li><a class="dropdown-item" href="{{ '/document/experiments/' | relative_url }}">Experiments</a></li>
+              <li><a class="dropdown-item" href="{{ '/document/notebook.html' | relative_url }}">Notebook</a></li>
+              <li><a class="dropdown-item" href="{{ '/document/safety.html' | relative_url }}">Safety</a></li>
+              <li><a class="dropdown-item" href="{{ '/document/protocol/' | relative_url }}">Protocol</a></li>
             </ul>
           </li>
 
