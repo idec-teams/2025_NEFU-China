@@ -1,0 +1,62 @@
+/*侧边标题*/
+.broadside {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    left: 0;
+    width: 23vw;
+    margin-top: 0;
+    margin-left: 5vw;
+    z-index: 150;
+    font-size: 1.6vw;
+}
+
+.broadside a {
+    text-decoration: none;
+    padding: 0.5vw 0; /* 增加上下间距 */
+}
+
+.broadside a:hover { /*响应后的样式*/
+    color: #ff8f78;
+    font-size: 1.68vw;
+    text-shadow:
+        0.01vh 0.01vh 0 #0000002f, /* 右下阴影 */
+        -0.01vh -0.01vh 0 #00000029, /* 左上阴影 */
+        0.01vh -0.01vh 0 #00000030, /* 右上阴影 */
+        -0.01vh 0.01vh 0 #0000002d; /* 左下阴影 */
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1.05);
+    -webkit-transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1.05); /* Safari */
+}
+
+.broadside_element { /*响应前的样式*/
+    margin-top: 0.5vw;
+    color: #35488f;
+    justify-content: flex-start;
+    transition: background-color 0.3s, color 0.3s; /* 平滑过渡 */
+    -webkit-transition: background-color 0.3s, color 0.3s; /* Safari */
+}
+
+.sidess {
+    display: none;
+}
+
+.submenu {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1vw;
+    padding: 0.65vw 0; /* 增加上下间距 */
+}
+
+.submenu a {
+    font-size: 1.4vw;
+    color: #c07c55;
+    padding: 0.5vw 0; /* 正确的padding */
+    text-decoration: none;
+    transition: color 0.3s;
+    -webkit-transition: color 0.3s; /* Safari */
+}
+
+.submenu a:hover {
+    color: #feb737;
+    font-size: 1.5vw;
+}
