@@ -5,7 +5,7 @@ body { background-color: #F2EFFF; font-family: Arial, sans-serif; margin: 0; pad
 .loading-text { font-size: 2.5rem; font-weight: bold; color: #1a2a3a; animation: blink 1.2s infinite; }
 
 /*进度条*/
-#progress-bar { position: fixed; top: 0vh; left: 0vw; width: 0; height: 0.5vh; background: linear-gradient(to right, #7fb4ea, #35488f); z-index: 150; transition: width 0.25s ease-out; }
+#progress-bar { position: fixed; top: 0vh; left: 0vw; width: 0; height: 0.5vh; background: linear-gradient(to right, #7fb4ea, #ffc107); z-index: 150; transition: width 0.25s ease-out; }
 
 /* === 鼠标指针自定义 === */
 body { cursor: url("/2025_NEFU-China/assets/images/cursor.png") 2 2, auto; }
