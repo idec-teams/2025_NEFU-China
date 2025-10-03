@@ -1,0 +1,235 @@
+---
+layout: default
+title: Safety
+---
+<head>
+  <link rel="stylesheet" href="{{ '/assets/broadside.css' | relative_url }}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style> 
+    body { 
+      background-color: #e3f4fc; 
+      font-size: 18px; 
+      color: #000; 
+    } 
+    img {
+      display: block;
+      vertical-align: middle;
+      width: 100%;
+      height: auto;
+      margin: auto auto;
+    }
+    .img2 {
+            display: inline-block;
+            margin: 0 auto;
+            text-align: center;
+            gap: 20px;
+            height: auto;
+    }
+    .content-box { 
+      border: 2px solid #7fb4ea; 
+      border-radius: 1vw; 
+      backdrop-filter: blur(15px) saturate(130%); 
+      background: rgba(255, 255, 255, 0.6); 
+      padding: 2rem; 
+    } 
+    .h1-custom { 
+      font-size: clamp(1.8rem, 3vw, 3rem); 
+      font-weight: 600; 
+      color: #35488f; 
+      letter-spacing: 0.1em; 
+      text-shadow: 0.1vh 0.1vh 0 #000000, 0.2vh 0.2vh 0 #000000; 
+    } 
+    .h2-custom { 
+      font-size: clamp(1.5rem, 2.4vw, 2.4rem); 
+      font-weight: 600; 
+      color: #7fb4ea; 
+    } 
+    .h3-custom { 
+      font-size: clamp(1rem, 1.7vw, 1.7rem); 
+      font-weight: 500; 
+    } 
+    p, li { 
+      text-align: justify; 
+    } 
+    .container{
+      margin-left:49.5vh;
+      width: 65vw;
+    }
+    @media (max-width: 1050px) {
+      .container {
+          margin-left: 0;
+          width: 90vw;
+          max-width: 90vw;
+      }
+      .broadside{
+          display: none;
+      }
+      .h1,h2,p,ol li{
+          max-width: 80vw;
+      }
+    }
+  </style>
+</head>
+
+
+<section class="hero">
+  <img src="{{ '/assets/images/notebook-bg.png' | relative_url }}" alt="Photo 1">
+</section>
+
+<div class="broadside" >
+  <a class="broadside_element side1" href="#side1"  >
+      Our Team
+      <div class="submenu"></div>
+  </a>
+
+  <a class="broadside_element side2" href="#side2">
+      Mentor
+      <div class="submenu"></div>
+  </a>
+
+  <a class="broadside_element side3" href="#side3">
+      Supevisor
+      <div class="submenu"></div>
+  </a>
+
+  <a class="broadside_element side4" href="#side4">
+      Special Thanks
+      <div class="submenu"></div>
+  </a>
+    
+</div>
+
+
+<div class="container my-5" > 
+  <div class="content-box" id="side1"> 
+    <h1 class="h1-custom mb-3">Our Team</h1> 
+      <img src = "{{ '/assets/images/attribution.png' | relative_url }}"  style="height: auto;">
+
+  </div>
+  <div class="content-box" id="side2">
+
+    <h1 class="h1-custom mb-3">Mentor</h1>
+    <p><strong>Linlin Wang</strong> </p>
+    <p>Guide the experimental methods and precautions to ensure the smooth development of the experiment.</p>
+    <p>Provide timely help when we encounter difficulties in our experiments.</p>
+
+    <p><strong>Jiayue Guan</strong> </p>
+    <p> To help plan our experiment </p>
+    <p>Responsible for the procurement of our experimental consumables</p>
+
+    <p><strong>Tianyan Miao</strong></p>
+    <p>Supervise and direct our experiments </p>
+    <p>Guide the acquisition and processing of experimental data </p>
+  </div>
+  <div class="content-box" id="side3">
+    <h1 class="h1-custom mb-3">Supevisor</h1>
+    <p><strong>Pengchao Wang</strong></p>
+    <p>Provided advice and insight on the project</p>
+    <p>Provided lab space, materials, and equipment</p>
+    <p>Provided support in experimental technology</p>
+    <p>Provided advice on presentation, poster, paper, Wiki and so on</p>
+    <p>Provided valuable insights on experiments design</p>
+  </div>
+  <div class="content-box" id="side4">
+    <h1 class="h1-custom mb-3">Special Thanks</h1>
+    <p>This work was supported by funding from Northeast Forestry University. We sincerely thank the strong support from the College of Life Sciences and the Aulin College, Northeast Forestry University. We are grateful for the experimental platform provided by the university, the guidance of our teachers, and the assistance of our mentors.</p>
+
+
+  </div> 
+</div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const sideLinks = document.querySelectorAll('.broadside a');
+    const broadsideContainer = document.querySelector('.broadside');
+    const styleMap = {
+        'side1': { fontSize: '1.7vw', color: '#ff8f78', display: 'block'},
+        'side2': { fontSize: '1.7vw', color: '#ff8f78', display: 'block'},
+        'side3': { fontSize: '1.7vw', color: '#ff8f78', display: 'block'},
+        'side4': { fontSize: '1.7vw', color: '#ff8f78', display: 'block'},
+    };
+
+    // Smooth scroll to target section
+    sideLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    let activeSectionId = null;
+
+    function checkScroll() {
+        const windowHeight = window.innerHeight;
+        const triggerPoint = windowHeight * 0.2;
+
+        let newActiveSectionId = null;
+
+        // 遍历所有 content-box
+        document.querySelectorAll('.content-box').forEach(section => {
+            const rect = section.getBoundingClientRect();
+            if (rect.top <= triggerPoint && rect.bottom >= triggerPoint) {
+                newActiveSectionId = section.id;
+            }
+        });
+
+        if (newActiveSectionId !== activeSectionId) {
+            // 控制 broadside 固定位置
+            if (newActiveSectionId) {
+                broadsideContainer.style.position = 'fixed';
+                broadsideContainer.style.marginTop = '10vh';
+                broadsideContainer.style.marginRight = '1.1vh';
+                broadsideContainer.style.top = '3vh';
+            } else {
+                broadsideContainer.style.position = '';
+                broadsideContainer.style.marginTop = '';
+                broadsideContainer.style.marginRight = '';
+                broadsideContainer.style.top = '';
+            }
+
+            sideLinks.forEach(link => {
+                const linkId = link.getAttribute('href').substring(1);
+                const styles = styleMap[linkId];
+
+                if (linkId === newActiveSectionId) {
+                    link.style.fontSize = styles.fontSize;
+                    link.style.color = styles.color;
+                    link.style.display = styles.display;
+                } else {
+                    link.style.fontSize = '';
+                    link.style.color = '';
+                    link.style.display = '';
+                }
+            });
+
+            activeSectionId = newActiveSectionId;
+        }
+    }
+
+    function checkWindowWidth() {
+        const windowWidth = window.innerWidth;
+        if (windowWidth <= 1050) {
+            broadsideContainer.style.display = 'none';
+            window.removeEventListener('scroll', checkScroll);
+        } else {
+            broadsideContainer.style.display = 'block';
+            window.addEventListener('scroll', checkScroll);
+            checkScroll();
+        }
+    }
+
+    window.addEventListener('resize', checkWindowWidth);
+    checkWindowWidth();
+    checkScroll();
+});
+
+</script>
