@@ -9,6 +9,28 @@ body {
   line-height: 1.6;
 }
 
+/* loading 文字样式 */
+#loading {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eaf9ff;
+  z-index: 9999;
+}
+
+/*进度条*/
+#progress-bar {
+    position: fixed;
+    top: 0vh;
+    left: 0vw;
+    width: 0;
+    height: 0.5vh;
+    background: linear-gradient(to right, #7fb4ea, #35488f);
+    z-index: 150;
+    transition: width 0.25s ease-out;
+}
 /* === 鼠标指针自定义 === */
 body {
 		cursor: url("{{ '/assets/images/cursor.png' | relative_url }}") 2 2, auto;
