@@ -77,14 +77,146 @@
   <div id="progress-bar" style="z-index:9999"></div>
 
   <main>
-    <section class="hero">
+    <head>
+  <style>
+    #section1 {overflow:hidden; position:relative; }
+    #section1 .img-stack { position:absolute; width:70vw; height:auto;}
+    #section1 .text-overlay {
+      position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);
+      color:white; text-align:center; z-index:10;
+    }
+    #combinedSection { position:relative; width:100%; height:200vh; } /* 给滚动空间 */
+
+  /* 初始重叠图片 */
+  .overlap-img {
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    width:auto;
+    height:90vh;
+    object-fit:cover;
+  }
+  /* 左侧图片特殊，用于右移 */
+  #leftImg {
+    left:25%;
+  }
+
+  /* 居中 rise 图片 */
+  .rise-img {
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    width:auto;
+    height:90vh;
+    top:50vh; /* 从屏幕下方开始 */
+    opacity:0;
+  }
+  .custom-text1 {
+    position: absolute;   /* 相对于最近的父元素定位 */
+    width: 20vw;          /* 宽度为视口宽度的 20% */
+    top: 9%;            /* 距离视口顶部 30% 高度 */
+    left: 58%;            /* 距离视口左边 50% 宽度 */
+    transform: translateX(-50%); /* 让它居中对齐 */
+    font-size: 1.2vw;
+  }
+  .custom-text2 {
+    position: absolute;   
+    width: 30vw;          
+    top: 81%;            
+    left: 46%;            
+    transform: translateX(-50%); 
+    font-size: 1.2vw;
+  }
+  .custom-text3 {
+    position: absolute;   
+    width: 40vw;          
+    top: 3.5%;            
+    left: 61%;            
+    transform: translateX(-50%); 
+    font-size: 3vw;
+  }
+  .custom-text4 {
+    position: absolute;   
+    width: 30vw;          
+    top: 75%;            
+    left: 58%;            
+    transform: translateX(-50%); 
+    font-size: 1.2vw;
+  }
+
+  </style>
+</head>
+
+
+<section class="hero">
   <div class="hero-bg hero-bg1" style="z-index:0"></div>
   <div class="hero-bg hero-bg2"></div>
   <img src="/2025_NEFU-China/assets/images/home-bg.png" alt="Photo 1">
 
-  <!-- 文本层 -->
+</section>
 
-  </section>
+<!-- Section1 -->
+<section id="section1" class="d-flex justify-content-center align-items-center position-relative">
+  <img src="./assets/images/home-section1-1.png" class="img-stack" style="position: relative;">
+  <img src="./assets/images/home-section1-2.png" class="img-stack">
+  <img src="./assets/images/home-section1-3.png" class="img-stack">
+  <div class="custom-text1">我要去实现我的价值，听说我产的色氨酸可以作为生物合成褪黑素的底物，我要努力去达到这个目标！ </div>
+  <div class="custom-text2">我是褪黑素，能调节昼夜节律和睡眠周期，但现在生产我太难了，同时受到环境、安全和成本问题的制约，我希望大肠杆菌能实现他的目标！</div>
+</section>
+
+
+<section id="combinedSection">
+  <!-- 初始重叠的三个图片 -->
+  <img src="./assets/images/home-section2-1.png" class="overlap-img" id="leftImg">
+  <img src="./assets/images/home-section2-2.png" class="overlap-img" id="centerImg">
+  <img src="./assets/images/home-section2-3.png" class="overlap-img" id="rightImg">
+  <div class="custom-text3" id="text3">首先我要提高色氨酸的合成量</div>
+  <div class="custom-text4" id='text4'>我们来帮你！只需要改变几个基因，再进行一下全基因组进化就可以</div>
+
+
+  <!-- 三张 rise 图片 -->
+  <img src="./assets/images/home-section3-1.png" class="rise-img" id="rise1">
+  <img src="./assets/images/home-section3-2.png" class="rise-img" id="rise2">
+  <img src="./assets/images/home-section3-3.png" class="rise-img" id="rise3">
+  <img src="./assets/images/home-section4-1.png" class="rise-img" id="rise4">
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+const tl = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#combinedSection",
+    start: "top 40vh",
+    end: "+=300%",
+    scrub:1,
+    pin:true,
+    pinSpacing:true
+  }
+});
+
+// --- 第1阶段：leftImg 右移，其他两张淡出 ---
+tl.to("#leftImg", { x: "40vw", duration:1 });
+tl.to(["#centerImg","#rightImg","text3","text4"], { y:"-100vh", opacity:1, duration:1 }, "<");
+
+// --- 第2阶段：三张 rise 图片依次从下升到画面中间 ---
+tl.to("#rise1", { y:"-50vh", opacity:1, duration:4 });
+tl.to("#rise1", { y:"-120vh", opacity:1, duration:4 }, ">+2");
+tl.to("#rise2", { y:"-50vh", opacity:1, duration:4 });
+tl.to("#rise2", { y:"-120vh", opacity:1, duration:4 }, ">+2");
+tl.to("#rise3", { y:"-50vh", opacity:1, duration:4 });
+
+// --- 第3阶段：leftImg 向上移出，同时另一张图片（rise1）继续向上 -->
+tl.to("#leftImg", { y:"-120vh", opacity:1, duration:4 }, ">+2");
+tl.to("#rise4", { y:"-50vh", opacity:1, duration:4 }, ">+2");
+</script>
+</body>
+</html>
+
 
 
   </main>
