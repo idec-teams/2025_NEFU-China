@@ -16,6 +16,13 @@ body {
     color: #1a2a3a;
     animation: blink 1.2s infinite;
 }
+/* to-top 图片 */
+
+/* 默认图片 */
+#toTopButton img {
+  content: url("{{ '/assets/images/to-top.png' | relative_url }}");
+  transition: transform 0.3s ease-in-out;
+}
 
 /*进度条*/
 #progress-bar {
