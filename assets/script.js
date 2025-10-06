@@ -25,3 +25,19 @@ window.onscroll = function() {
     var progress = (scrollTop / docHeight) * 100.0;//控制进度条长度
     document.getElementById('progress-bar').style.width = progress + '%';
 };
+//to-top按钮
+// 当页面滚动超过 200px 时显示按钮
+window.addEventListener("scroll", function() {
+  const toTopButton = document.getElementById("toTopButton");
+  if (window.scrollY > 200) {
+    toTopButton.classList.remove("d-none");
+  } else {
+    toTopButton.classList.add("d-none");
+  }
+});
+
+// 点击按钮平滑滚动到顶部
+document.getElementById("toTopButton").addEventListener("click", function() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+

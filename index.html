@@ -12,6 +12,8 @@
 			<img src="/2025_NEFU-China/assets/images/loading.gif" alt="Loading..." class="img-fluid" style="max-width:800px;">
   		<div class="mt-2 loading-text">Loading...</div>
 	</div>
+
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   
 </head>
@@ -76,16 +78,27 @@
 
   <div id="progress-bar" style="z-index:9999"></div>
 
+<	!-- To-top Button -->
+<button id="toTopButton" class="btn btn-light p-0 rounded-circle shadow position-fixed d-none" 
+        style="bottom: 100px; right: 20px; width:80px; height: 80px;z-index: 9999;">
+		<img src="/2025_NEFU-China/assets/images/to-top.png" 
+       alt="Back to Top" class="img-fluid">
+</button>
+
   <main>
     <head>
   <style>
-    #section1 {overflow:hidden; position:relative; }
-    #section1 .img-stack { position:absolute; width:70vw; height:auto;}
+.body {
+  background-color:#feffcd !important;
+}
+    #section1 {overflow:visible ; position:relative; background-color:#eff7ff5c}
+    #section3 {overflow:visible ; position:relative; background-color:#eff7ff}
+  .img-stack { position:absolute; width:70vw; height:auto;}
     #section1 .text-overlay {
       position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);
       color:white; text-align:center; z-index:10;
     }
-    #combinedSection { position:relative; width:100%; height:200vh; } /* 给滚动空间 */
+    #combinedSection { position:relative; width:100%; height:100vh} /* 给滚动空间 */
 
   /* 初始重叠图片 */
   .overlap-img {
@@ -170,8 +183,8 @@
   <img src="./assets/images/home-section2-1.png" class="overlap-img" id="leftImg">
   <img src="./assets/images/home-section2-2.png" class="overlap-img" id="centerImg">
   <img src="./assets/images/home-section2-3.png" class="overlap-img" id="rightImg">
-  <div class="custom-text3" id="text3">首先我要提高色氨酸的合成量</div>
-  <div class="custom-text4" id='text4'>我们来帮你！只需要改变几个基因，再进行一下全基因组进化就可以</div>
+  <div class="custom-text3" id="text3"></div>
+  <div class="custom-text4" id='text4'></div>
 
 
   <!-- 三张 rise 图片 -->
@@ -181,10 +194,15 @@
   <img src="./assets/images/home-section4-1.png" class="rise-img" id="rise4">
 </section>
 
+<section id="section3" class="d-flex justify-content-center align-items-center position-relative">
+  <img src="./assets/images/home-section5-1.png" class="img-stack" style="position: relative;">
+  <img src="./assets/images/home-section5-2.png" class="img-stack"style=''>
+  <div class="custom-text1"></div>
+  <div class="custom-text2"></div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
 <script>
 gsap.registerPlugin(ScrollTrigger);
 
@@ -193,9 +211,9 @@ const tl = gsap.timeline({
     trigger: "#combinedSection",
     start: "top 40vh",
     end: "+=300%",
-    scrub:1,
+    scrub:2,
     pin:true,
-    pinSpacing:true
+    makers:true,
   }
 });
 

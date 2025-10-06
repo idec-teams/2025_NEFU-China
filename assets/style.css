@@ -4,6 +4,10 @@ body { background-color: #F2EFFF; font-family: Arial, sans-serif; margin: 0; pad
 /* loading 文字样式 */
 .loading-text { font-size: 2.5rem; font-weight: bold; color: #1a2a3a; animation: blink 1.2s infinite; }
 
+/* to-top 图片 */
+/* 默认图片 */
+#toTopButton img { content: url("/2025_NEFU-China/assets/images/to-top.png"); transition: transform 0.3s ease-in-out; }
+
 /*进度条*/
 #progress-bar { position: fixed; top: 0vh; left: 0vw; width: 0; height: 0.5vh; background: linear-gradient(to right, #7fb4ea, #ffc107); z-index: 150; transition: width 0.25s ease-out; }
 

@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Safety</title>
+  <link rel="stylesheet" href="/2025_NEFU-China/assets/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Loading 区 -->
+	<div id="loading"
+    	class="position-fixed top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center"
+     	style="z-index:1050; background-color:#ccecf9;">
+			<img src="/2025_NEFU-China/assets/images/loading.gif" alt="Loading..." class="img-fluid" style="max-width:800px;">
+  		<div class="mt-2 loading-text">Loading...</div>
+	</div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+</head>
+<body>
+  <header>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="/2025_NEFU-China/">
+        <img src="/2025_NEFU-China/assets/images/NEFU_China_logo.png" alt="Logo" class="logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="/2025_NEFU-China/">Home</a></li>
+
+          <!-- Team 下拉菜单 -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="teamDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Team
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="teamDropdown">
+              <li><a class="dropdown-item" href="/2025_NEFU-China/team/members/">Members</a></li>
+              <li><a class="dropdown-item" href="/2025_NEFU-China/team/attribution.html">Attribution</a></li>
+            </ul>
+          </li>
+
+          <!-- Project 下拉菜单 -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="projectDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Project
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="projectDropdown">
+              <li><a class="dropdown-item" href="/2025_NEFU-China/project/background/">Background</a></li>
+              <li><a class="dropdown-item" href="/2025_NEFU-China/project/design/">Design</a></li>
+              <li><a class="dropdown-item" href="/2025_NEFU-China/project/results/">Results</a></li>
+              <li><a class="dropdown-item" href="/2025_NEFU-China/assets/docs/2025NEFU-China-iDEC-report.pdf">Report</a></li>
+              <li><a class="dropdown-item" href="/2025_NEFU-China/assets/docs/Supplementary%20Materials.pdf">Supplementary information</a></li>
+            </ul>
+          </li>
+
+          <!-- Document 下拉菜单 -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="documentDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Document
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="documentDropdown">
+              <li><a class="dropdown-item" href="/2025_NEFU-China/document/notebook.html">Notebook</a></li>
+              <li><a class="dropdown-item" href="/2025_NEFU-China/document/safety.html">Safety</a></li>
+              <li><a class="dropdown-item" href="/2025_NEFU-China/document/protocol.html">Protocol</a></li>
+            </ul>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+  <div id="progress-bar" style="z-index:9999"></div>
+
+<	!-- To-top Button -->
+<button id="toTopButton" class="btn btn-light p-0 rounded-circle shadow position-fixed d-none" 
+        style="bottom: 100px; right: 20px; width:80px; height: 80px;z-index: 9999;">
+		<img src="/2025_NEFU-China/assets/images/to-top.png" 
+       alt="Back to Top" class="img-fluid">
+</button>
+
+  <main>
+    <head>
+  <link rel="stylesheet" href="/2025_NEFU-China/assets/broadside.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style> 
+    body { 
+      background-color: #f2efff; 
+      font-size: 18px; 
+      color: #000; 
+    } 
+    img {
+      display: block;
+      vertical-align: middle;
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+    }
+    .img2 {
+            display: inline-block;
+            margin: 0 auto;
+            text-align: center;
+            gap: 20px;
+            height: auto;
+    }
+    .content-box { 
+      border: 2px solid #7fb4ea; 
+      border-radius: 1vw; 
+      backdrop-filter: blur(15px) saturate(130%); 
+      background: rgba(255, 255, 255, 0.6); 
+      padding: 2rem; 
+    } 
+    .h1-custom { 
+      font-size: clamp(1.8rem, 3vw, 3rem); 
+      font-weight: 600; 
+      color: #35488f; 
+      letter-spacing: 0.1em; 
+      text-shadow: 0.1vh 0.1vh 0 #000000, 0.2vh 0.2vh 0 #000000; 
+    } 
+    .h2-custom { 
+      font-size: clamp(1.5rem, 2.4vw, 2.4rem); 
+      font-weight: 600; 
+      color: #7fb4ea; 
+    } 
+    .h3-custom { 
+      font-size: clamp(1rem, 1.7vw, 1.7rem); 
+      font-weight: 500; 
+    } 
+    p, li { 
+      text-align: justify; 
+    } 
+    .container{
+      margin-left:49.5vh;
+      width: 65vw;
+    }
+    @media (max-width: 1050px) {
+      .container {
+          margin-left: 0;
+          width: 90vw;
+          max-width: 90vw;
+      }
+      .broadside{
+          display: none;
+      }
+      .h1,h2,p,ol li{
+          max-width: 80vw;
+      }
+    }
+  </style>
+</head>
+
+
+<section class="hero">
+  <img src="/2025_NEFU-China/assets/images/safety-bg.png" alt="Photo 1">
+</section>
+
+<div class="broadside" >
+  <a class="broadside_element side1" href="#side1"  >
+    Rational Design
+      <div class="submenu"></div>
+  </a>
+
+  <a class="broadside_element side2" href="#side2">
+    Development of Tryptophan Biosensors and Screening of Mutants
+      <div class="submenu"></div>
+  </a>
+
+  <a class="broadside_element side3" href="#side3">
+    Development and Testing of a Homocysteine Biosensor
+      <div class="submenu"></div>
+  </a>
+
+  <a class="broadside_element side4" href="#side4">
+    Mutant Selection
+      <div class="submenu"></div>
+  </a>
+  <a class="broadside_element side5" href="#side5">
+    References
+      <div class="submenu"></div>
+  </a>  
+</div>
+
+
+<div class="container my-5" > 
+  <div class="content-box" id="side1"> 
+    <h1 class="h1-custom mb-3">Rational Design</h1> 
+    <h2 class="h2-custom mb-3">Combinatorial Screening of Chassis Strains and High-Yield Plasmids</h2>
+    <p> 
+    This study constructed six chassis strains and three plasmids (Table 1).
+    </p> 
+    <img src = "/2025_NEFU-China/assets/images/result1.png"  style="width: 54vw; height: auto;">
+    <p>
+    <p><strong>Table 1.Plate strain and plasmid identifier</strong></p>
+  To enhance the tryptophan production capacity of the strains, each plasmid was transformed into three engineered strains:
+  the wild-type BW25113 (BW), BW-R<sup>1</sup> with the transcriptional repressor <em>trpR</em> deleted, and BW-RT<sup>2</sup> with simultaneous deletions
+  of <em>trpR</em> and the tryptophan degradation genes <em>tnaAB</em>.
+  The results showed that pTRP3 achieved the highest yield across all strains (Figure 1A).
+  Among them, the BW-RT (pTRP3) combination produced <strong>2.997 g/L</strong> of L-tryptophan, indicating that the synergistic effects
+  of transcriptional derepression, blockage of the degradation pathway, and feedback-resistant enzymes effectively improved production.
+</p>
+    <h2 class="h2-custom mb-3">Knockout of Competitive Pathway Genes to Redirect Carbon Flux</h2>
+    <p>
+  Based on the optimal combination BW-RT (<em>p</em>TRP3), we further knocked out genes at multiple competitive metabolic nodes to redirect carbon flux toward L-tryptophan synthesis.
+  The targeted genes included: <em>ptsG<sup>3,4</sup></em>, responsible for glucose uptake but consuming the precursor PEP;
+  <em>pykF</em> and <em>pykA<sup>5,6</sup></em>, which catalyze the conversion of PEP to pyruvate;
+  and <em>pheA<sup>7</sup></em>, which catalyzes the diversion of chorismate toward phenylalanine synthesis.
+  After transforming <em>p</em>TRP3 into the respective chassis strains (BW-RTG, BW-RTF, BW-RTA, BW-RTP),
+  the <em>pheA</em> knockout demonstrated the most significant effect (Figure 1B).
+  The final strain BW-RT <em>p</em>TRP3 achieved an L-tryptophan titer of <strong>3.99 g/L</strong>, representing a <strong>22.8%</strong> increase over the parent strain BW-RT.
+</p>
+<img src = "/2025_NEFU-China/assets/images/results2.png"  style="width: 54vw; height: auto;">
+<p><strong>Figure 1.</strong>Comparison of L-tryptophan production by different chassis strain-plasmid combinations. Plasmids pTRP1, pTRP2, pTRP3, and an empty plasmid control were transformed into strains BW, BW-R, and BW-RT for shake-flask fermentation. (B) Effects of knocking out key metabolic node genes (ptsG, pykF, pykA, pheA) on L-tryptophan production and cell growth (OD600) in the BW-RT strain background.</p>
+
+  </div>
+  <div class="content-box" id="side2">
+
+    <h1 class="h1-custom mb-3">Development of Tryptophan Biosensors and Screening of Mutants</h1>
+    <h2 class="h2-custom mb-3">Construction of Tryptophan Biosensors and Non-Rational Evolution</h2>
+    <p>
+  To efficiently screen for high-yield tryptophan-producing strains, we constructed a biosensor (<em>plb1s-pBAD-tnaC-mCherry-Cmr<sup>8</sup></em>) based on the leader peptide of the tryptophan operon.
+  This sensor regulates reporter gene expression according to intracellular tryptophan concentration: at low tryptophan levels, transcription of downstream genes is prematurely terminated;
+  at high tryptophan concentrations, ribosome stalling prevents termination, allowing normal transcription of downstream genes and enabling strain survival under specific chloromycin conditions.
+  Results showed that in the presence of <strong>12 mg/L</strong> chloromycin, bacterial growth increased with tryptophan supplementation within the concentration range of <strong>0–1.5 g/L</strong> (Figure 2A).
+  Subsequently, we subjected the <em>BWΔtrpRΔtnaAB-pYB1a-P23119-trpES40FDCBA</em> strain to directed evolution under these conditions.
+</p>
+
+<p>
+  To increase mutation frequency, we introduced the <em>MP6</em> plasmid, which expresses proteins that reduce DNA replication fidelity under arabinose induction, thereby generating genome-wide random mutations<sup>9</sup>.
+  We integrated this MP6 mutagenesis system with the aforementioned tryptophan biosensor to establish a high-throughput screening platform.
+  The chassis strain <em>BWΔtrpRΔtnaAB</em> was co-transformed with plasmids <em>MP6-K</em>, <em>pLB1s-PBAD-tnaC-mCherry-Cmr</em>, and <em>pYB1a-P23119-trpES40FDCBA</em>,
+  followed by multiple rounds of evolutionary screening.
+</p>
+
+<p>
+  Primary screening was conducted in a <strong>3 mL</strong> fermentation system.
+  Mutants <strong>3.4</strong> and <strong>10.7</strong> from the 10th round of evolution exhibited approximately <strong>3.25-fold</strong> higher tryptophan production compared to the wild-type strain (Figure 2B).
+  Subsequent re-screening in a <strong>15 mL</strong> system confirmed that mutants <strong>3.4</strong> and <strong>10.7</strong> showed the most significant production improvement (Figure 2C).
+</p>
+
+    <img src = "/2025_NEFU-China/assets/images/results3.png"  style="width: 40vw; height: auto;">
+    <p><strong>Figure 2. Development of a tnaC-based tryptophan biosensor and non-rational evolutionary design using the MP6 mutagenesis system.</strong> (A) Dose-dependent enhancement of bacterial growth with increasing tryptophan concentration (0–1.5 g/L). (B) Initial HPLC analysis indicated that mutants 3.4 and 10.7 exhibited the highest tryptophan production. (C) Repeated fermentation validation confirmed that mutants 3.4 and 10.7 showed significantly increased tryptophan production, reaching approximately 3.25-fold that of the wild-type strain.</p>
+    <h2 class="h2-custom mb-3"> Analysis of Whole-Genome Mutations</h2>
+    <h3 class="h3-custom mb-3">Identification and Comparison of Genomic Variations</h3>
+    <p>
+  Directed evolution induced significant genomic variations.
+  From strain <strong>3-4</strong> to strain <strong>10-7</strong>, the number of single nucleotide polymorphisms (SNPs) increased from <strong>60</strong> to <strong>175</strong>,
+  predominantly involving <em>C→T</em> transitions (Figure 3A).
+  These mutations were widely distributed across the entire chromosome (Figure 3C).
+</p>
+
+<p>
+  Further analysis revealed that strains <strong>3-4</strong> and <strong>10-7</strong> shared <strong>29</strong> identical SNPs.
+  Strain <strong>3-4</strong> contained <strong>25</strong> unique mutations, while strain <strong>10-7</strong> carried <strong>140</strong> unique mutations (Figure 3B),
+  indicating that they developed distinct phenotypic trajectories for high production during the evolutionary process.
+</p>
+
+
+    <img src = "/2025_NEFU-China/assets/images/results4.png"  style="width: 54vw; height: auto;">
+    <p><strong>Figure 3. Analysis of genomic variations in wild-type and evolved strains based on whole-genome sequencing.</strong>(A) Quantitative statistics of different SNP types. Strain 10-7 exhibited a significantly higher total number of SNPs compared to strain 3-4, with C→T transitions being the predominant type, consistent with the mutational signature of directed evolution. (B) Venn diagram of shared and unique SNPs between the two strains. The presence of 29 shared mutations, along with 25 unique to strain 3-4 and 140 unique to strain 10-7, reflects their adoption of distinct genetic strategies in adapting to the high-production phenotype. (C) Circos plot illustrating chromosomal mutation distribution. The widespread mutation patterns suggest global genetic alterations occurred during evolution. The concentric circles (from outermost to innermost) represent: SNP density of strain 10-7, SNP density of strain 3-4, InDel locations in strain 10-7, and InDel locations in strain 3-4.</p>
+    <h3 class="h3-custom mb-3">Functional Enrichment Analysis Reveals Distinct Evolutionary Strategies</h3>
+    <p>
+  Functional enrichment analysis elucidated the molecular basis of the high-production phenotype.
+  Analysis of shared mutant genes revealed significant enrichment in tryptophan and aromatic amino acid biosynthesis pathways,
+  indicating direct enhancement of the core biosynthetic route during evolution (Figure 4A).
+</p>
+
+<p>
+  Unique mutations in strain <strong>3-4</strong> were predominantly associated with RNA metabolism and related processes,
+  suggesting its high production was achieved through optimization of information processing and metabolic regulation (Figure 4B).
+  In contrast, unique mutations in strain <strong>10-7</strong> were primarily localized to membrane biogenesis and transmembrane transport functions,
+  implying that its high production relied more heavily on enhanced cellular structure and substance transport (Figure 4C).
+</p>
+
+<p>
+  These differences demonstrate that the two strains adopted distinct evolutionary strategies:
+  <strong>3-4</strong> favored systemic regulation, while <strong>10-7</strong> emphasized structural function reinforcement.
+</p>
+    <img src = "/2025_NEFU-China/assets/images/results5.png"  style="width: 54vw; height: auto;">
+    <p><strong>Figure 4. GO enrichment analysis of genomic variations in evolved strains.</strong>(A) Bubble plot of GO enrichment for mutations shared by both strains. Bubble size represents the number of genes, and color intensity (red) indicates the level of significance. (B) Bar plot of GO enrichment for mutations unique to strain 3-4. Significant terms are associated with RNA metabolism, regulation of gene expression, and related processes. (C) Bar plot of GO enrichment for mutations unique to strain 10-7. Enriched functions are primarily associated with membrane-related processes and ion transport.</p>
+    <h3 class="h3-custom mb-3">Genetic-Level Strategies for Tryptophan Production</h3>
+      <p>
+  GO analysis indicated that shared mutations in the <em>trpD</em> and <em>trpE</em> genes may have enhanced the core tryptophan biosynthesis pathway.
+  In strain <strong>3-4</strong>, mutations in genes such as <em>ligA</em> and <em>pnp</em> potentially improved the supply of reducing equivalents and degradation of competitive mRNAs, respectively,
+  thereby reinforcing metabolic regulation.
+  In strain <strong>10-7</strong>, mutations in genes including <em>rhtC</em> and <em>tyrR</em> likely promoted amino acid export and relieved precursor synthesis inhibition, respectively,
+  enhancing transport capacity and precursor supply (Table 2)<sup>10,11,12,13,14</sup>.
+</p>
+    <img src = "/2025_NEFU-China/assets/images/results6.png"  style="width: 54vw; height: auto;">
+    <p><strong>Table 2. Potential Contributions of Key Gene Mutations to Tryptophan Overproduction</strong></p>
+    <h1 class="h1-custom mb-3">Development and Testing of a Homocysteine Biosensor</h1>
+    <h2 class="h2-custom mb-3">Construction of the Tryptophan-Melatonin Pathway and Individual Enzyme Activity Assays</h2>
+    <p>
+  Based on the previously obtained high-yield tryptophan-producing <em>E. coli</em> strain,
+  we established a biosynthetic pathway for melatonin production from tryptophan.
+  The catalytic efficiencies of four key enzymes—<em>DjTPH</em>, <em>CrTDC</em>, <em>SgAANAT</em>, and <em>AtCOMT</em>—were evaluated<sup>15,16,17,18</sup>.
+  Results showed that <em>AtCOMT</em> exhibited significantly lower substrate conversion rates,
+  prompting the adoption of a directed evolution strategy to enhance its activity.
+</p>
+    <h2 class="h2-custom mb-3">Construction and Validation of a Homocysteine Biosensor</h2>
+    <p>
+  We developed a cysteine-dependent biosensor that couples <em>AtCOMT</em> activity with <em>E. coli</em> growth<sup>19</sup>.
+  In this system, bacterial survival depends on <em>AtCOMT</em>-catalyzed conversion of SAM to SAH, followed by homocysteine generation;
+  insufficient enzyme activity results in growth impairment.
+  Exogenous homocysteine supplementation restored growth in a concentration-dependent manner,
+  while the non-supplemented group failed to grow (Figure 5A), confirming the functional integrity of the biosensor.
+</p>
+
+<p>
+  Further comparison between wild-type <em>AtCOMT</em> and the high-activity mutant (<em>AtCOMT*</em>)<sup>20</sup> revealed that the mutant increased optical density by approximately <strong>5-fold</strong> after <strong>50 hours</strong> (Figure 5B),
+  demonstrating the sensor's capacity to effectively discriminate enzymatic activity variations and establishing a reliable platform for subsequent applications.
+</p>
+    <img src = "/2025_NEFU-China/assets/images/results7.png"  style="width: 54vw; height: auto;">
+    <p><strong>Figure 5. Development and validation of a homocysteine auxotrophic whole-cell biosensor.</strong>(A) Growth of <em>E. coli</em> was measured 16 h after exogenous supplementation with different homocysteine concentrations. Bacterial growth improved with increasing homocysteine concentrations, while the strain failed to grow in the absence of homocysteine, confirming its homocysteine auxotrophy. (B) The AtCOMT* strain exhibited significantly better growth than the wild-type, demonstrating a positive correlation between sensor response and enzyme activity.</p>
+    <h1 class="h1-custom mb-3">Mutant Selection</h1>
+    <h2 class="h2-custom mb-3">Screening of AtCOMT Mutants Using the Whole-Cell Biosensor</h2>
+    <p>
+  After validating the reliability of the homocysteine auxotrophic biosensor, we employed it to screen for <em>AtCOMT</em> mutants with enhanced enzymatic activity.
+  The known <em>AtCOMT***</em> mutant <strong>C296F-Q310L-V314T</strong>, which exhibits <strong>9.5-fold</strong> higher activity than the original strain, was used as the template.
+</p>
+
+<p>
+  We constructed an <em>AtCOMT</em> mutant library containing 2–3 amino acid substitutions via error-prone PCR and cloned it into the <em>pYB1a</em> vector,
+  which was then transformed into <em>E. coli DH5α</em>.
+  Mixed plasmids were extracted and subsequently transformed into the homocysteine auxotrophic chassis strain <em>BWΔCysE-pLB1s-Cys3-Cys4</em>
+  for growth advantage-based screening using the biosensor.
+</p>
+    <h2 class="h2-custom mb-3">Screening results and enzyme activity verification</h2>
+    <p>
+  After two rounds of screening and melatonin detection, <strong>27 out of 40</strong> clones in the first round had higher activity than the <em>AtCOMT</em> template,
+  and <strong>11 out of 32</strong> clones in the second round performed better (Figure 6).
+  To exclude the influence of the auxiliary plasmid <em>pLB1s-Cys3-Cys4</em> on the enzyme activity assay,
+  the plasmid of the optimal mutant selected was re-transformed into the wild-type <em>BW25113</em> and <em>BWΔCysE</em> strains for verification.
+</p>
+
+<p>
+  The results showed that even after removing the auxiliary plasmid, the mutant still maintained high activity in both backgrounds,
+  and the enzyme activity of the optimal mutant increased by approximately <strong>84%</strong> compared with the original template (Figure 7).
+</p>
+
+<p>
+  The above results indicate that high-activity mutants of <em>AtCOMT</em> were successfully screened using a cysteine auxotrophic biosensor,
+  which solved the problem of insufficient enzyme activity in the MT synthesis pathway and laid a foundation for subsequent studies on the enzymatic mechanism.
+</p>
+    <img src = "/2025_NEFU-China/assets/images/results8.png"  style="width: 54vw; height: auto;">
+    <p><strong>Figure 6. Results of AtCOMT mutant screening. </strong>(A) Among the 40 strains screened in the first round, 27 had higher activity than the original template AtCOMT***. (B) Among the 32 strains screened in the second round, 11 had higher activity than AtCOMT***.</p>
+    <p>
+  After removing the auxiliary plasmids from the top 5 highly active strains obtained through two rounds of screening,
+  the enzyme activities were detected in <em>BW25113</em> and <em>BWΔCysE</em>, respectively.
+  The results showed that the activity of the optimal <em>AtCOMT</em> mutant was approximately <strong>84%</strong> higher than that of the existing highly active strain.
+</p>
+    <img src = "/2025_NEFU-China/assets/images/results9.png"  style="width: 54vw; height: auto;">
+    <p><strong>Figure 7. Selection results of AtCOMT mutants.</strong>After eliminating the pLB1s-Cys3-Cys4 plasmid from the five strains exhibiting the highest enzyme activity in two rounds of screening, reassessment was performed in both BW25113 and BWΔcysE strains. The results demonstrated that the selected highest-activity AtCOMT* mutant showed an approximately 84% improvement compared to the existing highest-activity template.</p>
+    <h3 class="h3-custom mb-3">Analysis of Screening Results</h3>
+
+<p>
+  Molecular docking and HPLC analyses revealed a clear correlation between catalytic efficiency and binding stability in <em>AtCOMT***</em> (Figure 8A)
+  and its mutant <em>AtCOMT(K187R C296F Q310I V314T)</em> (Figure 8B).
+  The wild-type exhibited a more optimal catalytic conformation, with a shorter reaction distance between its active site <strong>His267</strong> and the substrate NAS.
+  In contrast, the mutant demonstrated stronger binding stability and a lower binding energy (<strong>-6.2 kcal/mol</strong> vs. <strong>-5.9 kcal/mol</strong>).
+</p>
+
+<p>
+  Although the catalytic distance slightly increased in the mutant, its substrate binding affinity was significantly enhanced (ΔG decreased by <strong>0.3 kcal/mol</strong>),
+  thereby improving the overall catalytic efficiency.
+  These results indicate that in this mutant, the contribution of enhanced binding affinity to catalytic efficiency outweighs that of local optimization of the catalytic conformation,
+  highlighting the critical role of substrate binding stability in regulating enzymatic activity.
+</p>
+    <img src = "/2025_NEFU-China/assets/images/results10.png"  style="width: 54vw; height: auto;"> 
+    <p><strong>Figure 8. Molecular docking results. </strong>(A) AtCOMT*** Distance between His267 and NE2: 2.1Å, Affinity: -5.9 kcal/mol. (B) AtCOMT (K187R C296F Q310I V314T) Distance between His267 and NE2: 2.4Å, Affinity: -6.2 kcal/mol.</p>
+  </div>
+  <div class="content-box" id="side5">
+<h1 class="h1-custom mb-3">References</h3>
+<ol>
+  <li>Ding, D., Bai, D., Li, J., Mao, Z., Zhu, Y., Liu, P., Lin, J., Ma, H., & Zhang, D. (2021). Analyzing the genetic characteristics of a tryptophan-overproducing <em>Escherichia coli</em>. <em>Bioprocess and Biosystems Engineering</em>, 44(8), 1685–1697. DOI: <a href="https://doi.org/10.1007/s00449-021-02552-4" target="_blank">https://doi.org/10.1007/s00449-021-02552-4</a></li>
+  
+  <li>Li, G., & Young, K. D. (2013). Indole production by the tryptophanase TnaA in <em>Escherichia coli</em> is determined by the amount of exogenous tryptophan. <em>Microbiology</em>, 159(Pt_2), 402-410. DOI: <a href="https://doi.org/10.1099/mic.0.064139-0" target="_blank">https://doi.org/10.1099/mic.0.064139-0</a></li>
+  
+  <li>Gu, P., Yang, F., Kang, J., Wang, Q., & Qi, Q. (2012). One-step of tryptophan attenuator inactivation and promoter swapping to improve the production of L-tryptophan in <em>Escherichia coli</em>. <em>Microbial Cell Factories</em>, 11(1), 30. DOI: <a href="https://doi.org/10.1186/1475-2859-11-30" target="_blank">https://doi.org/10.1186/1475-2859-11-30</a></li>
+  
+  <li>Yao, R., Hirose, Y., Sarkar, D., Nakahigashi, K., Ye, Q., & Shimizu, K. (2011). Catabolic regulation analysis of <em>Escherichia coli</em> and its crp, mlc, mgsA, pgi and ptsG mutants. <em>Microbial Cell Factories</em>, 10(1), 67. DOI: <a href="https://doi.org/10.1186/1475-2859-10-67" target="_blank">https://doi.org/10.1186/1475-2859-10-67</a></li>
+  
+  <li>Liu, L., Chen, S., & Wu, J. (2017). Phosphoenolpyruvate: glucose phosphotransferase system modification increases the conversion rate during L-tryptophan production in <em>Escherichia coli</em>. <em>Journal of Industrial Microbiology and Biotechnology</em>, 44(10), 1385-1395. DOI: <a href="https://doi.org/10.1007/s10295-017-1959-3" target="_blank">https://doi.org/10.1007/s10295-017-1959-3</a></li>
+  
+  <li>Chen, Y., Liu, Y., Ding, D., Cong, L., & Zhang, D. (2018). Rational design and analysis of an <em>Escherichia coli</em> strain for high-efficiency tryptophan production. <em>Journal of Industrial Microbiology and Biotechnology</em>, 45(5), 357-367. DOI: <a href="https://doi.org/10.1007/s10295-018-2020-x" target="_blank">https://doi.org/10.1007/s10295-018-2020-x</a></li>
+  
+  <li>Liu, X., Niu, H., Huang, Z., Li, Q., & Gu, P. (2020). Construction of a switchable synthetic <em>Escherichia coli</em> for aromatic amino acids by a tunable switch. <em>Journal of Industrial Microbiology and Biotechnology</em>, 47(2), 233-242. DOI: <a href="https://doi.org/10.1007/s10295-020-02262-y" target="_blank">https://doi.org/10.1007/s10295-020-02262-y</a></li>
+  
+  <li>Liu, Y., Yuan, H., Ding, D., Dong, H., Wang, Q., & Zhang, D. (2021). Establishment of a Biosensor-based High-Throughput Screening Platform for Tryptophan Overproduction. <em>ACS Synthetic Biology</em>, 10(6), 1402–1411. DOI: <a href="https://doi.org/10.1021/acssynbio.0c00647" target="_blank">https://doi.org/10.1021/acssynbio.0c00647</a></li>
+  
+  <li>Badran, A., Liu, D. (2015). Development of potent <em>in vivo</em> mutagenesis plasmids with broad mutational spectra. <em>Nat Commun</em>, 6, 8425. DOI: <a href="https://doi.org/10.1038/ncomms9425" target="_blank">https://doi.org/10.1038/ncomms9425</a></li>
+  
+  <li>Ding, D., Bai, D., Li, J., Mao, Z., Zhu, Y., Liu, P., Lin, J., Ma, H., & Zhang, D. (2021). Analyzing the genetic characteristics of a tryptophan-overproducing <em>Escherichia coli</em>. <em>Bioprocess and Biosystems Engineering</em>, 44(8), 1685–1697. DOI: <a href="https://doi.org/10.1007/s00449-021-02552-4" target="_blank">https://doi.org/10.1007/s00449-021-02552-4</a></li>
+  
+  <li>Chauleau, M., & Shuman, S. (2016). Kinetic mechanism and fidelity of nick sealing by <em>Escherichia coli</em> NAD+-dependent DNA ligase (LigA). <em>Nucleic Acids Research</em>, 44(5), 2298–2309. DOI: <a href="https://doi.org/10.1093/nar/gkw049" target="_blank">https://doi.org/10.1093/nar/gkw049</a></li>
+  
+  <li>Shi, Z., Yang, W. Z., Lin-Chao, S., Chak, K. F., & Yuan, H. S. (2008). Crystal structure of <em>Escherichia coli</em> PNPase: central channel residues are involved in processive RNA degradation. <em>RNA</em>, 14(11), 2361–2371. DOI: <a href="https://doi.org/10.1261/rna.1244308" target="_blank">https://doi.org/10.1261/rna.1244308</a></li>
+  
+  <li>Diesveld, R., Tietze, N., Fürst, O., Reth, A., Bathe, B., Sahm, H., & Eggeling, L. (2009). Activity of exporters of <em>Escherichia coli</em> in <em>Corynebacterium glutamicum</em>, and their use to increase L-threonine production. <em>Journal of Molecular Microbiology and Biotechnology</em>, 16(3-4), 198–207. DOI: <a href="https://doi.org/10.1159/000142530" target="_blank">https://doi.org/10.1159/000142530</a></li>
+  
+  <li>Verger, D., Carr, P. D., Kwok, T., & Ollis, D. L. (2007). Crystal structure of the N-terminal domain of the TyrR transcription factor responsible for gene regulation of aromatic amino acid biosynthesis and transport in <em>Escherichia coli</em> K12. <em>Journal of Molecular Biology</em>, 367(1), 102–112. DOI: <a href="https://doi.org/10.1016/j.jmb.2006.12.018" target="_blank">https://doi.org/10.1016/j.jmb.2006.12.018</a></li>
+  
+  <li>Kowlessur, D., Kaufman, S. Cloning and expression of recombinant human pineal tryptophan hydroxylase in <em>Escherichia coli</em>: purification and characterization of the cloned enzyme. DOI: <a href="https://doi.org/10.1016/S0167-4838(99)00184-3" target="_blank">https://doi.org/10.1016/S0167-4838(99)00184-3</a></li>
+  
+  <li>Park, S., Kang, K., Lee, S. W., Ahn, M. J., Bae, J. M., Back, K. (2011). Production of serotonin by dual expression of tryptophan decarboxylase and tryptamine 5-hydroxylase in <em>Escherichia coli</em>. <em>Applied Microbiology and Biotechnology</em>, 89(5), 1387-1394. DOI: <a href="https://doi.org/10.1007/s00253-010-2994-4" target="_blank">https://doi.org/10.1007/s00253-010-2994-4</a></li>
+  
+  <li>Deloménie, C., Fouix, S., Longuemaux, S., et al. (2001). Identification and functional characterization of arylamine N-acetyltransferases in eubacteria: evidence for highly selective acetylation of 5-aminosalicylic acid. <em>J Bacteriol</em>, 183(11), 3417-3427. DOI: <a href="https://doi.org/10.1128/JB.183.11.3417-3427.2001" target="_blank">https://doi.org/10.1128/JB.183.11.3417-3427.2001</a></li>
+  
+  <li>Byeon, Y., Lee, H. J., Lee, H. Y., Back, K. (2016). Cloning and functional characterization of the <em>Arabidopsis N-acetylserotonin O-methyltransferase</em> responsible for melatonin synthesis. <em>J Pineal Res</em>, 60(1), 65-73. DOI: <a href="https://doi.org/10.1111/jpi.12289" target="_blank">https://doi.org/10.1111/jpi.12289</a></li>
+  
+  <li>Khosla, C., Luo, H., Hansen, A. S. L., Yang, L., Schneider, K., Kristensen, M., Christensen, U., Christensen, H. B., Du, B., Özdemir, E., et al. (2019). Coupling S-adenosylmethionine–dependent methylation to growth: Design and uses. <em>PLOS Biology</em>, 17(3). DOI: <a href="https://doi.org/10.1371/journal.pbio.2007050" target="_blank">https://doi.org/10.1371/journal.pbio.2007050</a></li>
+  
+  <li>Wang, W., Su, S., Wang, S., Ye, L., Yu, H. (2019). Significantly improved catalytic efficiency of caffeic acid O-methyltransferase towards N-acetylserotonin by strengthening its interactions with the unnatural substrate’s terminal structure. <em>Enzyme and Microbial Technology</em>, 125, 1-5. DOI: <a href="https://doi.org/10.1016/j.enzmictec.2019.02.005" target="_blank">https://doi.org/10.1016/j.enzmictec.2019.02.005</a></li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div> 
+</div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const sideLinks = document.querySelectorAll('.broadside a');
+    const broadsideContainer = document.querySelector('.broadside');
+    const styleMap = {
+        'side1': { fontSize: '1.7vw', color: '#ff8f78', display: 'block'},
+        'side2': { fontSize: '1.7vw', color: '#ff8f78', display: 'block'},
+        'side3': { fontSize: '1.7vw', color: '#ff8f78', display: 'block'},
+        'side4': { fontSize: '1.7vw', color: '#ff8f78', display: 'block'},
+    };
+
+    // Smooth scroll to target section
+    sideLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    let activeSectionId = null;
+
+    function checkScroll() {
+        const windowHeight = window.innerHeight;
+        const triggerPoint = windowHeight * 0.2;
+
+        let newActiveSectionId = null;
+
+        // 遍历所有 content-box
+        document.querySelectorAll('.content-box').forEach(section => {
+            const rect = section.getBoundingClientRect();
+            if (rect.top <= triggerPoint && rect.bottom >= triggerPoint) {
+                newActiveSectionId = section.id;
+            }
+        });
+
+        if (newActiveSectionId !== activeSectionId) {
+            // 控制 broadside 固定位置
+            if (newActiveSectionId) {
+                broadsideContainer.style.position = 'fixed';
+                broadsideContainer.style.marginTop = '10vh';
+                broadsideContainer.style.marginRight = '1.1vh';
+                broadsideContainer.style.top = '3vh';
+            } else {
+                broadsideContainer.style.position = '';
+                broadsideContainer.style.marginTop = '';
+                broadsideContainer.style.marginRight = '';
+                broadsideContainer.style.top = '';
+            }
+
+            sideLinks.forEach(link => {
+                const linkId = link.getAttribute('href').substring(1);
+                const styles = styleMap[linkId];
+
+                if (linkId === newActiveSectionId) {
+                    link.style.fontSize = styles.fontSize;
+                    link.style.color = styles.color;
+                    link.style.display = styles.display;
+                } else {
+                    link.style.fontSize = '';
+                    link.style.color = '';
+                    link.style.display = '';
+                }
+            });
+
+            activeSectionId = newActiveSectionId;
+        }
+    }
+
+    function checkWindowWidth() {
+        const windowWidth = window.innerWidth;
+        if (windowWidth <= 1050) {
+            broadsideContainer.style.display = 'none';
+            window.removeEventListener('scroll', checkScroll);
+        } else {
+            broadsideContainer.style.display = 'block';
+            window.addEventListener('scroll', checkScroll);
+            checkScroll();
+        }
+    }
+
+    window.addEventListener('resize', checkWindowWidth);
+    checkWindowWidth();
+    checkScroll();
+});
+
+</script>
+
+  </main>
+
+  <footer class="pt-5 pb-5 footer py-5 mt-5 bg-dark text-white">
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-lg-6 col-xs-12">
+        <h4 class="mb-3">Heading</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac ante mollis quam tristique convallis</p>
+      </div>
+      <div class="col-lg-3 col-xs-12">
+        <h4 class="mt-lg-0 mt-sm-3">Links</h4>
+        <ul class="m-2 p-2">
+          <li><a href="#">Lorem ipsum</a></li>
+          <li><a href="#">Nam mauris velit</a></li>
+          <li><a href="#">Etiam vitae mauris</a></li>
+          <li><a href="#">Fusce scelerisque</a></li>
+          <li><a href="#">Sed faucibus</a></li>
+          <li><a href="#">Mauris efficitur nulla</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-xs-12">
+        <h4 class="mt-lg-0 mt-sm-4 mb-3">Contact</h4>
+        <p>22, Lorem ipsum dolor, consectetur adipiscing</p>
+        <p class="mb-0">(541) 754-3010</p>
+        <p>info@hsdf.com</p>
+        <!-- Social Icons -->
+        <div class="mt-2 d-flex gap-3">
+          <!-- 邮箱 -->
+          <a href="mailto:info@hsdf.com" target="_blank">
+            <img src="https://static.igem.wiki/teams/5974/footer/qq-email.webp" width="24" height="24" alt="邮箱">
+          </a>
+          <!-- 微信 -->
+          <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=Mzg5NTY1MzEwOQ==" target="_blank">
+            <img src="https://static.igem.wiki/teams/5974/footer/wechat.webp" width="24" height="24" alt="微信">
+          </a>
+          <!-- 小红书 -->
+          <a href="https://www.xiaohongshu.com/user/profile/67a5c29b0000000007003caf?xsec_token=YBkjEU-D3z1V_03-efveFtp0I46c48adlxcYP_vmDYuJ8%3D&xsec_source=app_share&xhsshare=WeixinSession&shareRedId=ODtDQUQ5OD02NzUyOTgwNjZIOTc2SD1N&apptime=1758101979&share_id=37bd072efc964789b685242f6847abe2&share_channel=wechat" target="_blank">
+            <img src="https://static.igem.wiki/teams/5974/footer/rednote.webp" width="24" height="24" alt="小红书">
+          </a>
+          <!-- Bilibili -->
+          <a href="https://space.bilibili.com/1859704945" target="_blank">
+            <img src="https://static.igem.wiki/teams/5974/footer/bilibili.webp" width="24" height="24" alt="Bilibili">
+          </a>
+          <!-- 抖音 -->
+          <a href="https://www.douyin.com/user/MS4wLjABAAAAQAnXJUEb5WzSxVKpKTI5qG31Qy97ivIZDcNC1SuA6K4ASUb0nCzFg7ZHCEAwQr2z?previous_page=app_code_link" target="_blank">
+            <img src="https://static.igem.wiki/teams/5974/footer/tiktalk.webp" width="24" height="24" alt="抖音">
+          </a>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <!-- License & Repository -->
+    <div class="row mt-4">
+      <div class="col">
+        <p class="mb-0"><small>© 2025 - Content on this site is licensed under a <a class="subfoot" href="https://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 International license</a>.</small></p>
+        <p><small>The repository used to create this website is available at <a href="https://gitlab.igem.org/2025/nefu-china">gitlab.igem.org/2025/nefu-china</a>.</small></p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/2025_NEFU-China/assets/script.js"></script>
+</body>
+</html>
+
