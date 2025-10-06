@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Safety</title>
+  <title>Background</title>
   <link rel="stylesheet" href="/2025_NEFU-China/assets/style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 	<!-- Loading 区 -->
@@ -163,97 +163,86 @@
 
 <div class="broadside" >
   <a class="broadside_element side1" href="#side1"  >
-      Overview
+    What is MT?
       <div class="submenu"></div>
   </a>
 
   <a class="broadside_element side2" href="#side2">
-      Module 1: Efficient synthesis of L-Tryptophan (L-Trp)
-      <div class="submenu">
-        <a href="#part1">Part 1: Rational Metabolic Engineering</a>
-        <a href="#part2">Part 2: Directed Evolution for Enhanced L-Trp Yield</a>
-        <a href="#part3">Part 3: Directed Evolution of AtCOMT Using Auxotrophy Biosensor</a>
-      </div>
+    Development of Tryptophan Biosensors and Screening of Mutants
+      <div class="submenu"></div>
   </a>
 
   <a class="broadside_element side3" href="#side3">
-      References
+    Development and Testing of a Homocysteine Biosensor
       <div class="submenu"></div>
   </a>
-    
+
+  <a class="broadside_element side4" href="#side4">
+    Mutant Selection
+      <div class="submenu"></div>
+  </a>
+  <a class="broadside_element side5" href="#side5">
+    References
+      <div class="submenu"></div>
+  </a>  
 </div>
 
 
 <div class="container my-5" > 
 <div class="content-box" id="side1">
-  <h1 class="h1-custom mb-3">Overview</h1>
-  <img src="/2025_NEFU-China/assets/images/design/pic1.png"> 
+    <h1 class="h1-custom mb-3">What is MT?</h1>
+    <p>
+        Melatonin (MT) is an evolutionarily conserved molecule that plays a key role in regulating circadian rhythms and sleep cycles in animals, plants, and microorganisms<sup>1,2</sup>. By synchronizing the biological clock, MT improves sleep quality, particularly in rhythm-disrupted or aging populations<sup>3</sup>. MT has significant global demand due to applications in sleep aids, anti-aging cosmetics, and animal husbandry.
+    </p>
+    <img src="/2025_NEFU-China/assets/images/background/1.gif">
 </div>
 
 <div class="content-box" id="side2">
-  <h1 class="h1-custom mb-3">Module 1: Efficient synthesis of L-Tryptophan (L-Trp)</h1>
-
-  <h2 class="h2-custom mb-3" id="part1">Part 1: Rational Metabolic Engineering</h2>
-  <p>
-    To improve tryptophan yield, we engineered its metabolic pathway by overexpressing biosynthetic genes, mutating feedback-resistant alleles, and eliminating branch pathway genes.
-    Firstly, we designed overexpression plasmids <em>pTRP1</em> and <em>pTRP2</em> with feedback-resistant variants carrying the <em>trpES40F</em> mutation, rendering anthranilate synthase insensitive to inhibition; 
-    <em>pTRP3</em> further integrates <em>aroGfbr</em> and <em>serAfbr</em> for enhanced supply of precursors DAHP and L-serine.
-  </p>
-  <p>
-    For flux redirection, we pruned competing pathways draining key intermediates (PEP, E4P, chorismate): Δ<em>ptsG</em> boosts PEP by modulating glucose uptake<sup>1</sup>; 
-    Δ<em>pykF</em>/Δ<em>pykA</em> blocks pyruvate kinase-mediated PEP loss<sup>2</sup>; and Δ<em>pheA</em> diverts chorismate from phenylalanine synthesis<sup>3</sup>. 
-    Additionally, we knocked out <em>trpR</em> to alleviate its feedback inhibition on the <em>trpEDCBA</em> operon, and deleted <em>tnaAB</em> to prevent the reuptake of extracellular tryptophan<sup>4</sup>.
-  </p>
-  <img src="/2025_NEFU-China/assets/images/design/pic2.png" class="my-3">
-
-  <h2 class="h2-custom mb-3" id="part2">Part 2: Directed Evolution for Enhanced L-Trp Yield</h2>
-  <p>
-    Under low L-Trp conditions, decoding release factor 2 (RF2) specifically recognizes the UGA stop codon and promotes the cleavage of peptidyl-tRNA<sup>Pro</sup> at the peptidyl transferase center (PTC) in the P-site of the ribosome. 
-    As a result, the ribosome rapidly dissociates from the nascent mRNA<sup>5</sup>. 
-  </p>
-  <p>
-    The action of RF2 is not inhibited under these conditions, allowing the ribosome to disassemble after translating the <em>tnaC</em> open reading frame. 
-    This exposes the <em>rut</em> site, enabling Rho binding and resulting in Rho-dependent termination. Consequently, downstream genes <em>mCherry</em> (used for fluorescence) and <em>Cmr</em> (conferring chloramphenicol resistance) are not transcribed.
-  </p>
-  <p>
-    In contrast, under high L-Trp conditions, RF2 function is inhibited, leading to ribosomal stalling at the end of the <em>tnaC</em> open reading frame. 
-    This stalled ribosome physically masks the Rho binding site, thereby preventing termination and allowing transcription to proceed.
-  </p>
-  <img src="/2025_NEFU-China/assets/images/design/1.gif" class="my-3">
-  <p>
-    In our workflow, we integrated the <em>MP6</em> plasmid into the optimized <em>BW-RT</em> chassis for arabinose-inducible, broad-spectrum genome mutagenesis<sup>6</sup>. 
-    Cells were co-transformed with the biosensor, then subjected to iterative rounds of chloramphenicol selection (12 mg/L), enriching populations for top performers. 
-    Then, the whole genome was analyzed using bioinformatics methods.
-  </p>
-  <img src="/2025_NEFU-China/assets/images/design/pic3.png" class="my-3">
-  <h2 class="h2-custom mb-3" id="part3">Part 3: Directed Evolution of AtCOMT Using Auxotrophy Biosensor</h2>
-  <p>
-    Based on previous research, we designed a whole-cell biosensor by knocking out the <em>cysE</em> gene in <em>Escherichia coli</em><sup>7</sup>. 
-    The resulting <em>E. coli ΔcysE</em> strain is unable to synthesize cysteine endogenously and cannot survive without external supplementation. 
-    We further introduced the <em>cys3</em> and <em>cys4</em> genes to establish a cysteine salvage pathway, in which S-adenosylmethionine (SAM) is utilized by <em>AtCOMT</em> 
-    and sequentially converted via homocysteine and cystathionine to ultimately synthesize cysteine. Consequently, bacterial growth directly depends on the enzymatic activity of <em>AtCOMT</em>.
-  </p>
-  <img src="/2025_NEFU-China/assets/images/design/2.gif" class="my-3">
-  <img src="/2025_NEFU-China/assets/images/design/3.gif" class="my-3">
-  <p>
-    Upon generating a diverse library of <em>AtCOMT</em> mutants via error-prone PCR, we transformed them into <em>E. coli</em> and employed the biosensor for high-throughput screening. 
-    Subsequently, the enzymatic activity of <em>AtCOMT</em> in the selected monoclonal strains was quantitatively assessed using high-performance liquid chromatography (HPLC). 
-    Finally, to elucidate the mechanistic basis of the interaction between <em>AtCOMT</em> and its substrate N-Acetylserotonin (NAS) at the atomic level, we performed molecular docking simulations to characterize their binding mode.
-  </p>
-  <img src="/2025_NEFU-China/assets/images/design/pic4.png" class="my-3">
+    <h1 class="h1-custom mb-3">Melatonin Production</h1>
+    <p>
+        Traditional MT production methods, including chemical synthesis and extraction from plant or animal sources, face environmental, safety, and economic limitations<sup>4,5</sup>. Microbial cell factories provide a sustainable and cost-effective alternative, reducing fermentation costs to approximately one-tenth of chemical synthesis<sup>6,7</sup>.
+    </p>
+    <img src="/2025_NEFU-China/assets/images/background/2.gif">
 </div>
 
 <div class="content-box" id="side3">
-  <h1 class="h1-custom mb-3">References</h1>
-  <ol>
-    <li>Gu, P., Yang, F., Kang, J., Wang, Q., & Qi, Q. (2012). One-step of tryptophan attenuator inactivation and promoter swapping to improve the production of L-tryptophan in <em>Escherichia coli</em>. <em>Microbial Cell Factories</em>, 11(1), 30. DOI: <a href="https://doi.org/10.1186/1475-2859-11-30" target="_blank">https://doi.org/10.1186/1475-2859-11-30</a></li>
-    <li>Liu, L., Chen, S., & Wu, J. (2017). Phosphoenolpyruvate: glucose phosphotransferase system modification increases the conversion rate during L-tryptophan production in <em>Escherichia coli</em>. <em>Journal of Industrial Microbiology and Biotechnology</em>, 44(10), 1385-1395. DOI: <a href="https://doi.org/10.1007/s10295-017-1959-3" target="_blank">https://doi.org/10.1007/s10295-017-1959-3</a></li>
-    <li>Liu, X., Niu, H., Huang, Z., Li, Q., & Gu, P. (2020). Construction of a switchable synthetic <em>Escherichia coli</em> for aromatic amino acids by a tunable switch. <em>Journal of Industrial Microbiology and Biotechnology</em>, 47(2), 233-242. DOI: <a href="https://doi.org/10.1007/s10295-020-02262-y" target="_blank">https://doi.org/10.1007/s10295-020-02262-y</a></li>
-    <li>Hou, M., Gao, S., Wu, J. et al. Metabolic engineering of <em>Escherichia coli</em> to enhance L-tryptophan biosynthesis. <em>Syst Microbiol and Biomanuf</em>, 5, 622–634 (2025). DOI: <a href="https://doi.org/10.1007/s43393-025-00338-3" target="_blank">https://doi.org/10.1007/s43393-025-00338-3</a></li>
-    <li>van der Stel, A. X., Gordon, E. R., Sengupta, A. et al. Structural basis for the tryptophan sensitivity of TnaC-mediated ribosome stalling. <em>Nat Commun</em>, 12, 5340 (2021). DOI: <a href="https://doi.org/10.1038/s41467-021-25663-8" target="_blank">https://doi.org/10.1038/s41467-021-25663-8</a></li>
-    <li>Badran, A., Liu, D. Development of potent <em>in vivo</em> mutagenesis plasmids with broad mutational spectra. <em>Nat Commun</em>, 6, 8425 (2015). DOI: <a href="https://doi.org/10.1038/ncomms9425" target="_blank">https://doi.org/10.1038/ncomms9425</a></li>
-    <li>Khosla, C., Luo, H., Hansen, A. S. L., et al. Coupling S-adenosylmethionine–dependent methylation to growth: Design and uses. <em>PLOS Biology</em>, 17(3) (2019). DOI: <a href="https://doi.org/10.1371/journal.pbio.2007050" target="_blank">https://doi.org/10.1371/journal.pbio.2007050</a></li>
-  </ol>
+    <h1 class="h1-custom mb-3">The Limitation of Biosynthetic Melatonin</h1>
+
+    <h2 class="h2-custom mb-3">Dual Constraints: Precursor Supply and Enzyme Catalysis</h2>
+    <ul>
+        <li><strong>Insufficient precursor supply:</strong> L-tryptophan, the direct precursor of MT, is produced via the shikimate pathway. Its limited metabolic flux restricts MT synthesis<sup>8,9</sup>.</li>
+        <li><strong>Low catalytic efficiency:</strong> Key enzymes such as tryptophan hydroxylase (L-Trp → 5-hydroxytryptophan) and arylalkylamine N-acetyltransferase (serotonin → N-acetylserotonin) have weak activity, reducing overall synthesis efficiency<sup>8,9</sup>.</li>
+    </ul>
+
+    <h2 class="h2-custom mb-3">Bottleneck in the Final Methylation Step</h2>
+    <p>
+        The final methylation step, catalyzed by Arabidopsis thaliana caffeic acid O-methyltransferase (AtCOMT), converts N-acetylserotonin into MT. This is the rate-limiting reaction in the pathway. Although previous AtCOMT mutants exhibited 9.5-fold higher activity than wild-type, they still fail to meet industrial demands for efficient and stable catalysis. Limited enzyme activity can cause intermediate accumulation, reducing MT yield and purity<sup>10</sup>.
+    </p>
+    <img src="/2025_NEFU-China/assets/images/background/3.gif">
+</div>
+
+<div class="content-box" id="side4">
+    <h1 class="h1-custom mb-3">Our Research</h1>
+    <p>
+        This study enhanced MT production by improving both L-tryptophan availability and AtCOMT catalytic efficiency. L-tryptophan production reached 3.99 g/L through upstream gene knockouts, overexpression, whole-genome mutagenesis, and tnaC-biosensor screening, achieving a 1609.9-fold increase over the wild-type BW25113. A growth-coupled high-throughput screening system based on the synthetic methyl cycle was used to select high-activity AtCOMT mutants. The best variant showed 84% higher catalytic efficiency than the highest literature-reported value, demonstrating the effectiveness of combining directed evolution, biosensors, and computational design for MT biosynthesis.
+    </p>
+    <img src="/2025_NEFU-China/assets/images/background/4.gif">
+</div>
+
+<div class="content-box" id="side5">
+    <h1 class="h1-custom mb-3">References</h1>
+    <ol>
+        <li>Wang, L., Deng, Y., Gao, J. et al. Biosynthesis of melatonin from l-tryptophan by an engineered microbial cell factory. Biotechnol Biofuels 17, 27 (2024). DOI: <a href="https://doi.org/10.1186/s13068-024-02476-7" target="_blank">10.1186/s13068-024-02476-7</a></li>
+        <li>Sun, C., Liu, L., Wang, L., Li, B., Jin, C., and Lin, X. Melatonin: A master regulator of plant development and stress responses. J Integr Plant Biol. 63, 126–145 (2021). DOI: <a href="https://doi.org/10.1111/jipb.12993" target="_blank">10.1111/jipb.12993</a></li>
+        <li>Inoue, K., Takano, H., Shimada, A., & Satoh, M. Metallothionein as an anti-inflammatory mediator. Mediators of Inflammation, 2009, 101659. DOI: <a href="https://doi.org/10.1155/2009/101659" target="_blank">10.1155/2009/101659</a></li>
+        <li>Megha, K. B., et al. Significance of Melatonin in the Regulation of Circadian Rhythms and Disease Management. Mol Neurobiol. 61, 5541–5571 (2024). DOI: <a href="https://doi.org/10.1007/s12035-024-03915-0" target="_blank">10.1007/s12035-024-03915-0</a></li>
+        <li>Xie, X., et al. Melatonin biosynthesis pathways in nature and its production in microorganisms. Synth Syst Biotechnol. 7, 544–553 (2022). DOI: <a href="https://doi.org/10.1016/j.synbio.2021.12.011" target="_blank">10.1016/j.synbio.2021.12.011</a></li>
+        <li>He, L., Li, J. L., Zhang, J. J., Su, P., & Zheng, S. L. Microwave Assisted Synthesis of Melatonin. Synth Commun. 33, 741–747 (2003). DOI: <a href="https://doi.org/10.1081/SCC-120016317" target="_blank">10.1081/SCC-120016317</a></li>
+        <li>Meng, X., Li, Y., Li, S. et al. Dietary Sources and Bioactivities of Melatonin. Nutrients 9, 367 (2017). DOI: <a href="https://doi.org/10.3390/nu9040367" target="_blank">10.3390/nu9040367</a></li>
+        <li>Luo, H., Schneider, K., Christensen, U., Lei, Y., Herrgard, M., and Palsson, B. Ø. Microbial Synthesis of Human-Hormone Melatonin at Gram Scales. ACS Synth Biol. 9, 1240–1245 (2020). DOI: <a href="https://doi.org/10.1021/acssynbio.0c00065" target="_blank">10.1021/acssynbio.0c00065</a></li>
+        <li>Zimmermann, P., Kurth, S., Pugin, B. et al. Microbial melatonin metabolism in the human intestine as a therapeutic target for dysbiosis and rhythm disorders. Npj Biofilms Microbiomes 10, 139 (2024). DOI: <a href="https://doi.org/10.1038/s41522-024-00605-6" target="_blank">10.1038/s41522-024-00605-6</a></li>
+        <li>Wang, W., Su, S., Wang, S., Ye, L., and Yu, H. Significantly improved catalytic efficiency of caffeic acid O-methyltransferase towards N-acetylserotonin by strengthening its interactions with the unnatural substrate’s terminal structure. Enzyme Microb Technol. 125, 1–5 (2019). DOI: <a href="https://doi.org/10.1016/j.enzmictec.2019.02.005" target="_blank">10.1016/j.enzmictec.2019.02.005</a></li>
+    </ol>
 </div>
 
 </div>
