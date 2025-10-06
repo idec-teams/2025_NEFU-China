@@ -4,9 +4,9 @@
     display: flex;
     flex-direction: column;
     left: 0;
-    width: 23vw;
+    width: 21vw;
     margin-top: 0;
-    margin-left: 5vw;
+    margin-left: 4vw;
     z-index: 150;
     font-size: 1.6vw;
 }
@@ -49,7 +49,7 @@
 
 .submenu a {
     font-size: 1.4vw;
-    color: #c07c55;
+    color: #35488f;
     padding: 0.5vw 0; /* 正确的padding */
     text-decoration: none;
     transition: color 0.3s;
