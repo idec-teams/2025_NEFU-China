@@ -78,9 +78,8 @@
 
   <div id="progress-bar" style="z-index:9999"></div>
 
-<	!-- To-top Button -->
 <button id="toTopButton" class="btn btn-light p-0 rounded-circle shadow position-fixed d-none" 
-        style="bottom: 100px; right: 20px; width:80px; height: 80px;z-index: 9999;">
+        style="bottom: 100px; right: 20px; width:80px; height: 80px;z-index: 999;">
 		<img src="/2025_NEFU-China/assets/images/to-top.png" 
        alt="Back to Top" class="img-fluid">
 </button>
@@ -161,24 +160,24 @@
 </section>
 
 <div class="broadside" >
-  <a class="broadside_element side1" href="#side1"  >
-      Overview
+  <div class="broadside_element side1"  >
+    <a href="#side1">Overview</a>
       <div class="submenu"></div>
-  </a>
+  </div>
 
-  <a class="broadside_element side2" href="#side2">
-      Module 1: Efficient synthesis of L-Tryptophan (L-Trp)
-      <div class="submenu">
-        <a href="#part1">Part 1: Rational Metabolic Engineering</a>
-        <a href="#part2">Part 2: Directed Evolution for Enhanced L-Trp Yield</a>
-        <a href="#part3">Part 3: Directed Evolution of AtCOMT Using Auxotrophy Biosensor</a>
-      </div>
-  </a>
+  <div class="broadside_element side2">
+    <a href="#side2">Module 1: Efficient synthesis of L-Tryptophan (L-Trp)</a>
+    <div class="submenu">
+      <a href="#part1">Part 1: Rational Metabolic Engineering</a>
+      <a href="#part2">Part 2: Directed Evolution for Enhanced L-Trp Yield</a>
+      <a href="#part3">Part 3: Directed Evolution of AtCOMT Using Auxotrophy Biosensor</a>
+    </div>
+  </div>
 
-  <a class="broadside_element side3" href="#side3">
-      References
+  <div class="broadside_element side3" >
+    <a href="#side3">References</a>
       <div class="submenu"></div>
-  </a>
+  </div>
     
 </div>
 
@@ -258,99 +257,7 @@
 </div>
 
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const sideLinks = document.querySelectorAll('.broadside a');
-    const broadsideContainer = document.querySelector('.broadside');
-    const styleMap = {
-        'side1': { fontSize: '1.7vw', color: '#ff8f78', display: 'block'},
-        'side2': { fontSize: '1.7vw', color: '#ff8f78', display: 'block'},
-        'side3': { fontSize: '1.7vw', color: '#ff8f78', display: 'block'},
-        'side4': { fontSize: '1.7vw', color: '#ff8f78', display: 'block'},
-    };
-
-    // Smooth scroll to target section
-    sideLinks.forEach(link => {
-        link.addEventListener('click', function(event) {
-            event.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-
-    let activeSectionId = null;
-
-    function checkScroll() {
-        const windowHeight = window.innerHeight;
-        const triggerPoint = windowHeight * 0.2;
-
-        let newActiveSectionId = null;
-
-        // 遍历所有 content-box
-        document.querySelectorAll('.content-box').forEach(section => {
-            const rect = section.getBoundingClientRect();
-            if (rect.top <= triggerPoint && rect.bottom >= triggerPoint) {
-                newActiveSectionId = section.id;
-            }
-        });
-
-        if (newActiveSectionId !== activeSectionId) {
-            // 控制 broadside 固定位置
-            if (newActiveSectionId) {
-                broadsideContainer.style.position = 'fixed';
-                broadsideContainer.style.marginTop = '10vh';
-                broadsideContainer.style.marginRight = '1.1vh';
-                broadsideContainer.style.top = '3vh';
-            } else {
-                broadsideContainer.style.position = '';
-                broadsideContainer.style.marginTop = '';
-                broadsideContainer.style.marginRight = '';
-                broadsideContainer.style.top = '';
-            }
-
-            sideLinks.forEach(link => {
-                const linkId = link.getAttribute('href').substring(1);
-                const styles = styleMap[linkId];
-
-                if (linkId === newActiveSectionId) {
-                    link.style.fontSize = styles.fontSize;
-                    link.style.color = styles.color;
-                    link.style.display = styles.display;
-                } else {
-                    link.style.fontSize = '';
-                    link.style.color = '';
-                    link.style.display = '';
-                }
-            });
-
-            activeSectionId = newActiveSectionId;
-        }
-    }
-
-    function checkWindowWidth() {
-        const windowWidth = window.innerWidth;
-        if (windowWidth <= 1050) {
-            broadsideContainer.style.display = 'none';
-            window.removeEventListener('scroll', checkScroll);
-        } else {
-            broadsideContainer.style.display = 'block';
-            window.addEventListener('scroll', checkScroll);
-            checkScroll();
-        }
-    }
-
-    window.addEventListener('resize', checkWindowWidth);
-    checkWindowWidth();
-    checkScroll();
-});
-
-</script>
+<script src="/2025_NEFU-China/assets/broadside.js"> </script>
 
   </main>
 

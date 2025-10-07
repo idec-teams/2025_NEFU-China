@@ -16,7 +16,7 @@
     padding: 0.5vw 0; /* 增加上下间距 */
 }
 
-.broadside a:hover { /*响应后的样式*/
+.broadside_element:hover { /*响应后的样式*/
     color: #ff8f78;
     font-size: 1.68vw;
     text-shadow:
@@ -49,7 +49,7 @@
 
 .submenu a {
     font-size: 1.4vw;
-    color: #35488f;
+    color: #c07c55;
     padding: 0.5vw 0; /* 正确的padding */
     text-decoration: none;
     transition: color 0.3s;
