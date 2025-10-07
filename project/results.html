@@ -77,36 +77,49 @@ title: Results
 </section>
 
 <div class="broadside" >
-  <a class="broadside_element side1" href="#side1"  >
-    Rational Design
-      <div class="submenu"></div>
-  </a>
+  <div class="broadside_element side1">
+    <a href="#side1">Rational Design </a>
+      <div class="submenu">
+        <a href="#part1-1">Combinatorial Screening of Chassis Strains and High-Yield Plasmids </a>
+        <a href="#part1-2">Knockout of Competitive Pathway Genes to Redirect Carbon Flux</a>
 
-  <a class="broadside_element side2" href="#side2">
-    Development of Tryptophan Biosensors and Screening of Mutants
-      <div class="submenu"></div>
-  </a>
+      </div>
+  </div>
 
-  <a class="broadside_element side3" href="#side3">
-    Development and Testing of a Homocysteine Biosensor
-      <div class="submenu"></div>
-  </a>
+  <div class="broadside_element side2">
+    <a href="#side2"> Development of Tryptophan Biosensors and Screening of Mutants </a>
+      <div class="submenu">
+        <a href="#part2-1">Construction of Tryptophan Biosensors and Non-Rational Evolution</a>
+        <a href="#part2-2">Analysis of Whole-Genome Mutations</a>
+      </div>
+  </div>
 
-  <a class="broadside_element side4" href="#side4">
-    Mutant Selection
+  <div class="broadside_element side3">
+    <a href="#side3">Development and Testing of a Homocysteine Biosensor</a>
+      <div class="submenu">
+        <a href="#part3-1">Construction of the Tryptophan-Melatonin Pathway and Individual Enzyme Activity Assays</a>
+        <a href="#part3-2">Construction and Validation of a Homocysteine Biosensor</a>
+      </div>
+  </div>
+
+  <div class="broadside_element side4">
+    <a href="#side4">Mutant Selection</a>
+      <div class="submenu">
+        <a href="#part4-1">Screening of AtCOMT Mutants Using the Whole-Cell Biosensor</a>
+        <a href="#part4-2">Screening results and enzyme activity verification</a> 
+      </div>
+  </div>
+  <div class="broadside_element side5">
+    <a href="#side5">References</a>
       <div class="submenu"></div>
-  </a>
-  <a class="broadside_element side5" href="#side5">
-    References
-      <div class="submenu"></div>
-  </a>  
+  </div>  
 </div>
 
 
 <div class="container my-5" > 
   <div class="content-box" id="side1"> 
     <h1 class="h1-custom mb-3">Rational Design</h1> 
-    <h2 class="h2-custom mb-3">Combinatorial Screening of Chassis Strains and High-Yield Plasmids</h2>
+    <h2 class="h2-custom mb-3" id="part1-1">Combinatorial Screening of Chassis Strains and High-Yield Plasmids</h2>
     <p> 
     This study constructed six chassis strains and three plasmids (Table 1).
     </p> 
@@ -120,7 +133,7 @@ title: Results
   Among them, the BW-RT (pTRP3) combination produced <strong>2.997 g/L</strong> of L-tryptophan, indicating that the synergistic effects
   of transcriptional derepression, blockage of the degradation pathway, and feedback-resistant enzymes effectively improved production.
 </p>
-    <h2 class="h2-custom mb-3">Knockout of Competitive Pathway Genes to Redirect Carbon Flux</h2>
+    <h2 class="h2-custom mb-3" id="side1-2">Knockout of Competitive Pathway Genes to Redirect Carbon Flux</h2>
     <p>
   Based on the optimal combination BW-RT (<em>p</em>TRP3), we further knocked out genes at multiple competitive metabolic nodes to redirect carbon flux toward L-tryptophan synthesis.
   The targeted genes included: <em>ptsG<sup>3,4</sup></em>, responsible for glucose uptake but consuming the precursor PEP;
@@ -137,7 +150,7 @@ title: Results
   <div class="content-box" id="side2">
 
     <h1 class="h1-custom mb-3">Development of Tryptophan Biosensors and Screening of Mutants</h1>
-    <h2 class="h2-custom mb-3">Construction of Tryptophan Biosensors and Non-Rational Evolution</h2>
+    <h2 class="h2-custom mb-3" id="part2-1" >Construction of Tryptophan Biosensors and Non-Rational Evolution</h2>
     <p>
   To efficiently screen for high-yield tryptophan-producing strains, we constructed a biosensor (<em>plb1s-pBAD-tnaC-mCherry-Cmr<sup>8</sup></em>) based on the leader peptide of the tryptophan operon.
   This sensor regulates reporter gene expression according to intracellular tryptophan concentration: at low tryptophan levels, transcription of downstream genes is prematurely terminated;
@@ -161,7 +174,7 @@ title: Results
 
     <img src = "{{ '/assets/images/results3.png' | relative_url }}"  style="width: 40vw; height: auto;">
     <p><strong>Figure 2. Development of a tnaC-based tryptophan biosensor and non-rational evolutionary design using the MP6 mutagenesis system.</strong> (A) Dose-dependent enhancement of bacterial growth with increasing tryptophan concentration (0–1.5 g/L). (B) Initial HPLC analysis indicated that mutants 3.4 and 10.7 exhibited the highest tryptophan production. (C) Repeated fermentation validation confirmed that mutants 3.4 and 10.7 showed significantly increased tryptophan production, reaching approximately 3.25-fold that of the wild-type strain.</p>
-    <h2 class="h2-custom mb-3"> Analysis of Whole-Genome Mutations</h2>
+    <h2 class="h2-custom mb-3" id="part2-2"> Analysis of Whole-Genome Mutations</h2>
     <h3 class="h3-custom mb-3">Identification and Comparison of Genomic Variations</h3>
     <p>
   Directed evolution induced significant genomic variations.
@@ -209,8 +222,10 @@ title: Results
 </p>
     <img src = "{{ '/assets/images/results6.png' | relative_url }}"  style="width: 54vw; height: auto;">
     <p><strong>Table 2. Potential Contributions of Key Gene Mutations to Tryptophan Overproduction</strong></p>
+  </div>
+  <div class="content-box" id="side3">
     <h1 class="h1-custom mb-3">Development and Testing of a Homocysteine Biosensor</h1>
-    <h2 class="h2-custom mb-3">Construction of the Tryptophan-Melatonin Pathway and Individual Enzyme Activity Assays</h2>
+    <h2 class="h2-custom mb-3" id="part3-1">Construction of the Tryptophan-Melatonin Pathway and Individual Enzyme Activity Assays</h2>
     <p>
   Based on the previously obtained high-yield tryptophan-producing <em>E. coli</em> strain,
   we established a biosynthetic pathway for melatonin production from tryptophan.
@@ -218,7 +233,7 @@ title: Results
   Results showed that <em>AtCOMT</em> exhibited significantly lower substrate conversion rates,
   prompting the adoption of a directed evolution strategy to enhance its activity.
 </p>
-    <h2 class="h2-custom mb-3">Construction and Validation of a Homocysteine Biosensor</h2>
+    <h2 class="h2-custom mb-3" id="part3-2">Construction and Validation of a Homocysteine Biosensor</h2>
     <p>
   We developed a cysteine-dependent biosensor that couples <em>AtCOMT</em> activity with <em>E. coli</em> growth<sup>19</sup>.
   In this system, bacterial survival depends on <em>AtCOMT</em>-catalyzed conversion of SAM to SAH, followed by homocysteine generation;
@@ -233,8 +248,10 @@ title: Results
 </p>
     <img src = "{{ '/assets/images/results7.png' | relative_url }}"  style="width: 54vw; height: auto;">
     <p><strong>Figure 5. Development and validation of a homocysteine auxotrophic whole-cell biosensor.</strong>(A) Growth of <em>E. coli</em> was measured 16 h after exogenous supplementation with different homocysteine concentrations. Bacterial growth improved with increasing homocysteine concentrations, while the strain failed to grow in the absence of homocysteine, confirming its homocysteine auxotrophy. (B) The AtCOMT* strain exhibited significantly better growth than the wild-type, demonstrating a positive correlation between sensor response and enzyme activity.</p>
+  </div>
+  <div class="content-box" id="side4">
     <h1 class="h1-custom mb-3">Mutant Selection</h1>
-    <h2 class="h2-custom mb-3">Screening of AtCOMT Mutants Using the Whole-Cell Biosensor</h2>
+    <h2 class="h2-custom mb-3" id="part4-1">Screening of AtCOMT Mutants Using the Whole-Cell Biosensor</h2>
     <p>
   After validating the reliability of the homocysteine auxotrophic biosensor, we employed it to screen for <em>AtCOMT</em> mutants with enhanced enzymatic activity.
   The known <em>AtCOMT***</em> mutant <strong>C296F-Q310L-V314T</strong>, which exhibits <strong>9.5-fold</strong> higher activity than the original strain, was used as the template.
@@ -246,7 +263,7 @@ title: Results
   Mixed plasmids were extracted and subsequently transformed into the homocysteine auxotrophic chassis strain <em>BWΔCysE-pLB1s-Cys3-Cys4</em>
   for growth advantage-based screening using the biosensor.
 </p>
-    <h2 class="h2-custom mb-3">Screening results and enzyme activity verification</h2>
+    <h2 class="h2-custom mb-3" id="part4-2">Screening results and enzyme activity verification</h2>
     <p>
   After two rounds of screening and melatonin detection, <strong>27 out of 40</strong> clones in the first round had higher activity than the <em>AtCOMT</em> template,
   and <strong>11 out of 32</strong> clones in the second round performed better (Figure 6).
@@ -335,117 +352,7 @@ title: Results
 </ol>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   </div> 
 </div>
 
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const sideLinks = document.querySelectorAll('.broadside a');
-    const broadsideContainer = document.querySelector('.broadside');
-    const styleMap = {
-        'side1': { fontSize: '1.7vw', color: '#ff8f78', display: 'block'},
-        'side2': { fontSize: '1.7vw', color: '#ff8f78', display: 'block'},
-        'side3': { fontSize: '1.7vw', color: '#ff8f78', display: 'block'},
-        'side4': { fontSize: '1.7vw', color: '#ff8f78', display: 'block'},
-    };
-
-    // Smooth scroll to target section
-    sideLinks.forEach(link => {
-        link.addEventListener('click', function(event) {
-            event.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-
-    let activeSectionId = null;
-
-    function checkScroll() {
-        const windowHeight = window.innerHeight;
-        const triggerPoint = windowHeight * 0.2;
-
-        let newActiveSectionId = null;
-
-        // 遍历所有 content-box
-        document.querySelectorAll('.content-box').forEach(section => {
-            const rect = section.getBoundingClientRect();
-            if (rect.top <= triggerPoint && rect.bottom >= triggerPoint) {
-                newActiveSectionId = section.id;
-            }
-        });
-
-        if (newActiveSectionId !== activeSectionId) {
-            // 控制 broadside 固定位置
-            if (newActiveSectionId) {
-                broadsideContainer.style.position = 'fixed';
-                broadsideContainer.style.marginTop = '10vh';
-                broadsideContainer.style.marginRight = '1.1vh';
-                broadsideContainer.style.top = '3vh';
-            } else {
-                broadsideContainer.style.position = '';
-                broadsideContainer.style.marginTop = '';
-                broadsideContainer.style.marginRight = '';
-                broadsideContainer.style.top = '';
-            }
-
-            sideLinks.forEach(link => {
-                const linkId = link.getAttribute('href').substring(1);
-                const styles = styleMap[linkId];
-
-                if (linkId === newActiveSectionId) {
-                    link.style.fontSize = styles.fontSize;
-                    link.style.color = styles.color;
-                    link.style.display = styles.display;
-                } else {
-                    link.style.fontSize = '';
-                    link.style.color = '';
-                    link.style.display = '';
-                }
-            });
-
-            activeSectionId = newActiveSectionId;
-        }
-    }
-
-    function checkWindowWidth() {
-        const windowWidth = window.innerWidth;
-        if (windowWidth <= 1050) {
-            broadsideContainer.style.display = 'none';
-            window.removeEventListener('scroll', checkScroll);
-        } else {
-            broadsideContainer.style.display = 'block';
-            window.addEventListener('scroll', checkScroll);
-            checkScroll();
-        }
-    }
-
-    window.addEventListener('resize', checkWindowWidth);
-    checkWindowWidth();
-    checkScroll();
-});
-
-</script>
+<script src="/2025_NEFU-China/assets/broadside.js"> </script>

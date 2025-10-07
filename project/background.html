@@ -77,29 +77,32 @@ title: Background
 </section>
 
 <div class="broadside" >
-  <a class="broadside_element side1" href="#side1"  >
-    What is MT?
+  <div class="broadside_element side1"  >
+    <a href="#side1" > What is MT?</a>
       <div class="submenu"></div>
-  </a>
+  </div>
 
-  <a class="broadside_element side2" href="#side2">
-    Development of Tryptophan Biosensors and Screening of Mutants
+  <div class="broadside_element side2">
+    <a href="#side2">Melatonin Production</a>
       <div class="submenu"></div>
-  </a>
+  </div>
 
-  <a class="broadside_element side3" href="#side3">
-    Development and Testing of a Homocysteine Biosensor
-      <div class="submenu"></div>
-  </a>
+  <div class="broadside_element side3">
+    <a href="#side3">The Limitation of Biosynthetic Melatonin</a>
+      <div class="submenu">
+      <a href="#part1">Dual Constraints: Precursor Supply and Enzyme Catalysis</a>
+      <a href="#part2">Bottleneck in the Final Methylation Step</a>
+      </div>
+  </div>
 
-  <a class="broadside_element side4" href="#side4">
-    Mutant Selection
+  <div class="broadside_element side4">
+    <a href="#side4">Our Research</a>
       <div class="submenu"></div>
-  </a>
-  <a class="broadside_element side5" href="#side5">
-    References
+  </div>
+  <div class="broadside_element side5">
+    <a href="#side5">References</a>
       <div class="submenu"></div>
-  </a>  
+  </div>  
 </div>
 
 
@@ -161,98 +164,5 @@ title: Background
 </div>
 
 </div>
+<script src="{{ '/assets/broadside.js' | relative_url }}"> </script>
 
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const sideLinks = document.querySelectorAll('.broadside a');
-    const broadsideContainer = document.querySelector('.broadside');
-    const styleMap = {
-        'side1': { fontSize: '1.7vw', color: '#ff8f78', display: 'block'},
-        'side2': { fontSize: '1.7vw', color: '#ff8f78', display: 'block'},
-        'side3': { fontSize: '1.7vw', color: '#ff8f78', display: 'block'},
-        'side4': { fontSize: '1.7vw', color: '#ff8f78', display: 'block'},
-    };
-
-    // Smooth scroll to target section
-    sideLinks.forEach(link => {
-        link.addEventListener('click', function(event) {
-            event.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-
-    let activeSectionId = null;
-
-    function checkScroll() {
-        const windowHeight = window.innerHeight;
-        const triggerPoint = windowHeight * 0.2;
-
-        let newActiveSectionId = null;
-
-        // 遍历所有 content-box
-        document.querySelectorAll('.content-box').forEach(section => {
-            const rect = section.getBoundingClientRect();
-            if (rect.top <= triggerPoint && rect.bottom >= triggerPoint) {
-                newActiveSectionId = section.id;
-            }
-        });
-
-        if (newActiveSectionId !== activeSectionId) {
-            // 控制 broadside 固定位置
-            if (newActiveSectionId) {
-                broadsideContainer.style.position = 'fixed';
-                broadsideContainer.style.marginTop = '10vh';
-                broadsideContainer.style.marginRight = '1.1vh';
-                broadsideContainer.style.top = '3vh';
-            } else {
-                broadsideContainer.style.position = '';
-                broadsideContainer.style.marginTop = '';
-                broadsideContainer.style.marginRight = '';
-                broadsideContainer.style.top = '';
-            }
-
-            sideLinks.forEach(link => {
-                const linkId = link.getAttribute('href').substring(1);
-                const styles = styleMap[linkId];
-
-                if (linkId === newActiveSectionId) {
-                    link.style.fontSize = styles.fontSize;
-                    link.style.color = styles.color;
-                    link.style.display = styles.display;
-                } else {
-                    link.style.fontSize = '';
-                    link.style.color = '';
-                    link.style.display = '';
-                }
-            });
-
-            activeSectionId = newActiveSectionId;
-        }
-    }
-
-    function checkWindowWidth() {
-        const windowWidth = window.innerWidth;
-        if (windowWidth <= 1050) {
-            broadsideContainer.style.display = 'none';
-            window.removeEventListener('scroll', checkScroll);
-        } else {
-            broadsideContainer.style.display = 'block';
-            window.addEventListener('scroll', checkScroll);
-            checkScroll();
-        }
-    }
-
-    window.addEventListener('resize', checkWindowWidth);
-    checkWindowWidth();
-    checkScroll();
-});
-
-</script>
