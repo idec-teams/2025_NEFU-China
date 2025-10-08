@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Evolutionary Pathways</title>
+  <link rel="stylesheet" href="/2025_NEFU-China/assets/style.css">
+  <link href="/2025_NEFU-China/assets/bootstrap.min.css" rel="stylesheet">
+	<!-- Loading 区 -->
+	<div id="loading"
+    	class="position-fixed top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center"
+     	style="z-index:1050; background-color:#ccecf9;">
+			<img src="/2025_NEFU-China/assets/images/loading.gif" alt="Loading..." class="img-fluid" style="max-width:800px;">
+  		<div class="mt-2 loading-text">Loading...</div>
+	</div>
+
+
+  <script src="/2025_NEFU-China/assets/bootstrap.bundle.min.js"></script>
+  
+</head>
+<body>
+  <header>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="/2025_NEFU-China/">
+        <img src="/2025_NEFU-China/assets/images/NEFU_China_logo.png" alt="Logo" class="logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="/2025_NEFU-China/">Home</a></li>
+
+          <!-- Team 下拉菜单 -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="teamDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Team
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="teamDropdown">
+              <li><a class="dropdown-item" href="/2025_NEFU-China/team/members/">Members</a></li>
+              <li><a class="dropdown-item" href="/2025_NEFU-China/team/attribution.html">Attribution</a></li>
+            </ul>
+          </li>
+
+          <!-- Project 下拉菜单 -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="projectDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Project
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="projectDropdown">
+              <li><a class="dropdown-item" href="/2025_NEFU-China/project/background.html">Background</a></li>
+              <li><a class="dropdown-item" href="/2025_NEFU-China/project/design.html">Design</a></li>
+              <li><a class="dropdown-item" href="/2025_NEFU-China/project/results.html">Results</a></li>
+              <li><a class="dropdown-item" href="/2025_NEFU-China/assets/docs/2025NEFU-China-iDEC-report.pdf">Report</a></li>
+              <li><a class="dropdown-item" href="/2025_NEFU-China/assets/docs/Supplementary%20Materials.pdf">Supplementary information</a></li>
+            </ul>
+          </li>
+
+          <!-- Document 下拉菜单 -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="documentDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Document
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="documentDropdown">
+              <li><a class="dropdown-item" href="/2025_NEFU-China/document/notebook.html">Notebook</a></li>
+              <li><a class="dropdown-item" href="/2025_NEFU-China/document/safety.html">Safety</a></li>
+              <li><a class="dropdown-item" href="/2025_NEFU-China/document/protocol.html">Protocol</a></li>
+            </ul>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+  <div id="progress-bar" style="z-index:9999"></div>
+
+<button id="toTopButton" class="btn btn-light p-0 rounded-circle shadow position-fixed d-none" 
+        style="bottom: 100px; right: 20px; width:80px; height: 80px;z-index: 999;">
+		<img src="/2025_NEFU-China/assets/images/to-top.png" 
+       alt="Back to Top" class="img-fluid">
+</button>
+
+  <main>
+    <!DOCTYPE html>
+<link href="../assets/members.css">
+<style>
+  
+/* 轮播容器：占屏幕一半并居中 */
+.carousel {
+  width: 100vw;           /* 占屏幕宽度的一半 */
+  max-width: 100%;      /* 可选：防止在大屏幕上过宽 */
+  margin: 0 auto;        /* 居中显示 */
+  overflow: hidden;
+  border-radius: 1rem;   /* 可选：添加圆角 */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* 可选：添加阴影 */
+}
+
+/* 内层图片容器 */
+.carousel-inner {
+  display: flex;
+  width: 400%;            /* 假设有4张图 */
+  animation: scroll 40s infinite;
+}
+
+/* 每张图片 */
+.carousel-inner img {
+  width: 25%;             /* 4张图等分 */
+  height: auto;           /* 保持比例 */
+  object-fit: cover;      /* 填满每一张的空间 */
+  border-radius: 1rem;    /* 图片圆角 */
+}
+
+/* 定义动画 */
+@keyframes scroll {
+  0%   { transform: translateX(0%); }
+  20%  { transform: translateX(0%); }      /* 停留在第1张 */
+  25%  { transform: translateX(-25%); }
+  45%  { transform: translateX(-25%); }    /* 停留在第2张 */
+  50%  { transform: translateX(-50%); }
+  70%  { transform: translateX(-50%); }    /* 停留在第3张 */
+  75%  { transform: translateX(-75%); }
+  95%  { transform: translateX(-75%); }    /* 停留在第4张 */
+  100% { transform: translateX(0%); }      /* 回到第1张 */
+}
+
+
+</style>
+</head>
+
+<body>
+
+  <div class="carousel">
+
+    <div class="carousel-inner">
+        <img src="../assets/images/idecteam1.jpg" alt="Image 1">
+        <img src="../assets/images/idecteam2.jpg" alt="Image 2">
+        <img src="../assets/images/idecteam3.jpg" alt="Image 3">
+        <img src="../assets/images/idecteam3.jpg" alt="Image 4">
+
+    </div>
+  </div>
+    
+  <div >
+        <h1 style="
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 6rem;
+        text-align: center;
+        margin: 2rem 0;
+        color: #1a365d; /* 深色调文字，与浅黄背景高对比 */
+        /* 文字阴影（蓝绿色做立体效果） */
+        text-shadow: 
+          1px 1px 0px #4fd1c5, 
+          2px 2px 4px rgba(79, 209, 197, 0.3);
+      ">Members</h1>  </div>
+
+
+
+      <main>
+        
+
+      </main>
+
+
+</body>
+  </main>
+
+  <footer class="pt-5 pb-5 footer py-5 mt-5 bg-dark text-white">
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-lg-6 col-xs-12">
+        <h4 class="mb-3">Heading</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac ante mollis quam tristique convallis</p>
+      </div>
+      <div class="col-lg-3 col-xs-12">
+        <h4 class="mt-lg-0 mt-sm-3">Links</h4>
+        <ul class="m-2 p-2">
+          <li><a href="#">Lorem ipsum</a></li>
+          <li><a href="#">Nam mauris velit</a></li>
+          <li><a href="#">Etiam vitae mauris</a></li>
+          <li><a href="#">Fusce scelerisque</a></li>
+          <li><a href="#">Sed faucibus</a></li>
+          <li><a href="#">Mauris efficitur nulla</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-xs-12">
+        <h4 class="mt-lg-0 mt-sm-4 mb-3">Contact</h4>
+        <p>22, Lorem ipsum dolor, consectetur adipiscing</p>
+        <p class="mb-0">(541) 754-3010</p>
+        <p>info@hsdf.com</p>
+        <!-- Social Icons -->
+        <div class="mt-2 d-flex gap-3">
+          <!-- 邮箱 -->
+          <a href="mailto:info@hsdf.com" target="_blank">
+            <img src="https://static.igem.wiki/teams/5974/footer/qq-email.webp" width="24" height="24" alt="邮箱">
+          </a>
+          <!-- 微信 -->
+          <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=Mzg5NTY1MzEwOQ==" target="_blank">
+            <img src="https://static.igem.wiki/teams/5974/footer/wechat.webp" width="24" height="24" alt="微信">
+          </a>
+          <!-- 小红书 -->
+          <a href="https://www.xiaohongshu.com/user/profile/67a5c29b0000000007003caf?xsec_token=YBkjEU-D3z1V_03-efveFtp0I46c48adlxcYP_vmDYuJ8%3D&xsec_source=app_share&xhsshare=WeixinSession&shareRedId=ODtDQUQ5OD02NzUyOTgwNjZIOTc2SD1N&apptime=1758101979&share_id=37bd072efc964789b685242f6847abe2&share_channel=wechat" target="_blank">
+            <img src="https://static.igem.wiki/teams/5974/footer/rednote.webp" width="24" height="24" alt="小红书">
+          </a>
+          <!-- Bilibili -->
+          <a href="https://space.bilibili.com/1859704945" target="_blank">
+            <img src="https://static.igem.wiki/teams/5974/footer/bilibili.webp" width="24" height="24" alt="Bilibili">
+          </a>
+          <!-- 抖音 -->
+          <a href="https://www.douyin.com/user/MS4wLjABAAAAQAnXJUEb5WzSxVKpKTI5qG31Qy97ivIZDcNC1SuA6K4ASUb0nCzFg7ZHCEAwQr2z?previous_page=app_code_link" target="_blank">
+            <img src="https://static.igem.wiki/teams/5974/footer/tiktalk.webp" width="24" height="24" alt="抖音">
+          </a>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <!-- License & Repository -->
+    <div class="row mt-4">
+      <div class="col">
+        <p class="mb-0"><small>© 2025 - Content on this site is licensed under a <a class="subfoot" href="https://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 International license</a>.</small></p>
+        <p><small>The repository used to create this website is available at <a href="https://gitlab.igem.org/2025/nefu-china">gitlab.igem.org/2025/nefu-china</a>.</small></p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/2025_NEFU-China/assets/script.js"></script>
+</body>
+</html>
+

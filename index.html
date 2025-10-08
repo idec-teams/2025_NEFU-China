@@ -90,21 +90,21 @@
 .body {
   background-color:#feffcd !important;
 }
-    #section1 {overflow:visible ; position:relative; background-color:#eff7ff5c}
+    #section1 {overflow:visible ; width:70%; margin:auto;position:relative; background-color:#eff7ff5c}
     #section3 {overflow:visible ; position:relative; background-color:#eff7ff}
-  .img-stack { position:absolute; width:70%; height:auto;}
+  .img-stack { position:absolute; width:100%; height:auto;}
     #section1 .text-overlay {
       position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);
       color:white; text-align:center; z-index:10;
     }
-    #combinedSection { position:relative; width:100%; height:100vh} /* 给滚动空间 */
+    #combinedSection { position:relative; margin:auto; width:70%; height:100vh} /* 给滚动空间 */
 
   /* 初始重叠图片 */
   .overlap-img {
     position:absolute;
     left:50%;
     transform:translateX(-50%);
-    width:70vw;
+    width:100%;
     height:auto;
     object-fit:cover;
   }
@@ -124,46 +124,48 @@
     position:absolute;
     left:50%;
     transform:translateX(-50%);
-    width:70vw;
+    width:100%;
     height:auto;
     top:50vh; /* 从屏幕下方开始 */
     opacity:0;
   }
   .custom-text {
+    top:50%;
+    left:50%;
     position: absolute;   /* 相对于最近的父元素定位 */
-    transform: translateX(-50%); /* 让它居中对齐 */
+    transform: translate(-50%,-50%); /* 让它居中对齐 */
   }
   .custom-text1 {
     position: absolute;   
-    top: 2%;
-    left: 57%; 
+    top: 50%;
+    left: 50%; 
     transform: translateX(-50%); 
     width: 30vw; 
     font-size: 1vw; 
   }
   .custom-text2 {
     position: absolute;   
-    top: 22.5%;
+    top: 52%;
     left: 51%; 
     transform: translateX(-50%); 
-    width: 30%; 
+    width: 39%; 
     font-size: 0.9rem; 
   }
   .custom-text3 {
     position: absolute;   
-    top: 30%;
-    left: 39%; 
+    top: 59%;
+    left: 35%; 
     transform: translateX(-50%); 
-    width: 37%; 
+    width:44%; 
     font-size: 1rem; 
     opacity:0;
   }
   .custom-text4 {
     position: absolute;   
-    top: 48%;
-    left: 49%; 
+    top: 104%;
+    left: 48%; 
     transform: translateX(-50%); 
-    width: 28%; 
+    width: 39%; 
     font-size: 0.8rem; 
     opacity:0;
   }
@@ -196,7 +198,7 @@
   <img src="./assets/images/home-section2-1.png" class="overlap-img" id="leftImg">
   <img src="./assets/images/home-section2-2.png" class="overlap-img" id="centerImg">
   <img src="./assets/images/home-section2-3.png" class="overlap-img" id="rightImg">
-  <div class="custom-text1" id="text3">First, I must increase the synthesis of tryptophan.</div>
+  <div class="custom-text" id="text3" style="width:31vw;margin-top:-49%;margin-left:6vw;font-size:1.2rem">First, I must increase the synthesis of tryptophan.</div>
   <div class="custom-text2" id='text4'>We're here to help!We will perform pathway optimization on your process of producing tryptophan from glucose.  </div>
 
 
@@ -209,7 +211,7 @@
   <!-- 悲伤的两个图片 -->
   <img src="./assets/images/home-section3-3.png" class="rise-img" id="rise3-3">
   <img src="./assets/images/home-section3-left.png" class="rise-img" id="rise3-left">
-  <div class="custom-text" id="text3-left" style="opacity:0;width:30vw;font-size:0.9rem;top:29%;left:49%">My binding ability is too poor, the binding with the substrate is very unstable, I cannot help you convert NAS to MT. What should I do?</div>
+  <div class="custom-text" id="text3-left" style="opacity:0;width:40vw;font-size:0.9rem;top:60%;left:48%">My binding ability is too poor, the binding with the substrate is very unstable, I cannot help you convert NAS to MT. What should I do?</div>
   <img src="./assets/images/home-section3-right.png" class="rise-img" id="rise3-right">
   <div class="custom-text4" id="text3-right1">We will help you build a biosensor and perform directed evolution on you to make your binding ability stronger.</div>
 
@@ -228,7 +230,7 @@
   <img src="./assets/images/home-section5-2.png" class="img-stack"style=''>
   <img src="./assets/images/home-section5-3.png" class="img-stack"style=''>
   <img src="./assets/images/home-section5-4.png" class="img-stack"style=''>
-  <div class="custom-text">With your help, I will certainly achieve my dream faster to produce more melatonin!</div>
+  <div class="custom-text" style="opacity:1;width:24vw;font-size:0.9rem;top:13%;left:48%">With your help, I will certainly achieve my dream faster to produce more melatonin!</div>
 
 <script src="/2025_NEFU-China/assets/gsap.min.js"></script>
 <script src="/2025_NEFU-China/assets/ScrollTrigger.min.js"></script>
@@ -249,7 +251,7 @@ const tl = gsap.timeline({
 });
 
 // --- 第1阶段：leftImg 右移，其他两张淡出 ---
-tl.to("#leftImg", { x: "45vw", duration:1 });
+tl.to("#leftImg", { x: "150%", duration:1 });
 tl.to(["#centerImg","#rightImg","#text3","#text4"], { y:"-100vh", opacity:0, duration:1 }, "<");
 
 // --- 分子式1进入 ---
@@ -272,6 +274,25 @@ tl.to(["#rise3-3","#rise3-left","#text3-left"],{y:"-120vh", opacity:1, duration:
 tl.to("#rise4-2",{y:"-50vh",opacity:1, duration:4 })
 // --- 全隐藏 ---
 tl.to(["#rise4-1","#rise4-2","#rise3-right","#text4-1"],{ opacity:1, duration:4 },">+2")
+
+
+
+// 初始加载
+document.addEventListener("DOMContentLoaded", () => {
+  initResponsiveAnimations();
+  // 额外确保刷新，以防DOM加载时间差异
+  setTimeout(ScrollTrigger.refresh, 1000);
+});
+
+// 窗口大小变化（包括缩放）时重置动画
+let resizeTimeout;
+window.addEventListener("resize", () => {
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(() => {
+    initResponsiveAnimations(); // 重新计算 vh 并创建动画
+    ScrollTrigger.refresh(); // 刷新所有滚动位置计算
+  }, 250); // 防抖
+});
 
 
 
