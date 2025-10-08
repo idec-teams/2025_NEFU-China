@@ -1,0 +1,38 @@
+/* Helvetica */
+.helvetica-text {
+    font-family: "Helvetica", Arial, sans-serif;
+  }
+
+.two-line-spacing {
+    line-height: 2; /* 表示行高是字体大小的两倍，相当于“两行” */
+  }
+
+.letter-spacing-7 {
+    letter-spacing: 0.07em; /* 每个字母之间多出 7% 的宽度 */
+  }
+
+.text-size{
+  font-size: 1.4rem
+}
+
+.text-weight{
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.h1-size{
+  margin-left:3%;
+  margin-top: 3%;
+  font-weight: 800;
+  font-size: 6rem;
+}
+
+.h2-size{
+  margin-top: 3%;
+  font-weight: bold;
+  font-family: 1.8rem;
+}
+
+.h3-size{
+  font-weight: 700;
+  font-size: 1.6rem;
+}
