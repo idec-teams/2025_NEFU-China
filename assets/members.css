@@ -13,14 +13,11 @@ main .box{
 
 main .container{
   position:relative;
-  background:#fff;
   border-radius:12px;
-  box-shadow:0 8px 20px rgba(0,0,0,.12);
   aspect-ratio:2/3;
   display:flex;
   align-items:center;
   justify-content:center;
-  overflow:hidden;              /* 防溢出 */
   perspective:1200px;           /* 3D 透视——翻转关键 */
 }
 
@@ -116,7 +113,7 @@ main .helvetica-text{
 
 /* 悬停触发翻转：正面转走，背面转正 */
 main .container:hover .text{  transform:rotateY(180deg); }
-main .container:hover .box1{  transform:rotateY(0deg);   }
+main .container:hover .text{  transform:rotateY(0deg);   }
 
 /******** 响应式（可按需微调） ********/
 @media (max-width:1200px){
