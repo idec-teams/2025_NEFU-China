@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Home page</title>
   <link rel="stylesheet" href="/2025_NEFU-China/assets/style.css">
+  <link rel="stylesheet" href="/2025_NEFU-China/assets/footer.css">
   <link href="/2025_NEFU-China/assets/bootstrap.min.css" rel="stylesheet">
 	<!-- Loading 区 -->
 	<div id="loading"
@@ -90,8 +91,8 @@
 .body {
   background-color:#feffcd !important;
 }
-    #section1 {overflow:visible ; width:70%; margin:auto;position:relative; background-color:#eff7ff5c}
-    #section3 {overflow:visible ; position:relative; background-color:#eff7ff}
+    #section1 {overflow:visible ; width:70%; margin:auto;position:relative;margin-bottom:20vh}
+    #section3 {overflow:visible ; width:70%; margin:auto;position:relative; color:#eff7ff}
   .img-stack { position:absolute; width:100%; height:auto;}
     #section1 .text-overlay {
       position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);
@@ -110,10 +111,10 @@
   }
   /* 左侧图片特殊，用于右移 */
   #leftImg {
-    left:25%;
+    left:8%;
     position:absolute;
     transform:translateX(-50%);
-    width:30%;
+    width:40%;
     height:auto;
     object-fit:cover;
 
@@ -185,11 +186,7 @@
 <!-- Section1 -->
 <section id="section1" class="d-flex justify-content-center align-items-center position-relative">
   <img src="./assets/images/home-section1-1.png" class="img-stack" style="position: relative;">
-  <img src="./assets/images/home-section1-2.png" class="img-stack">
-  <img src="./assets/images/home-section1-3.png" class="img-stack">
-  <div class="custom-text" style="width:30vw;font-size:1.0vw;top:9%;left:64%">I am Escherichia coli. There are multiple pathways within my body to synthesize tryptophan, but I want to create more value. I've heard that tryptophan can be further synthesized into melatonin,I must strive to produce melatonin!
 </div>
-  <div class="custom-text"style="width:30vw;font-size:1.0vw;top:81%;left:48%" >I am melatonin. I can regulate circadian rhythms and sleep cycles, but now it is too difficult to produce me. At the same time, I am constrained by environmental, safety, and cost issues. I hope Escherichia coli. can achieve its goal!</div>
 </section>
 
 
@@ -198,26 +195,22 @@
   <img src="./assets/images/home-section2-1.png" class="overlap-img" id="leftImg">
   <img src="./assets/images/home-section2-2.png" class="overlap-img" id="centerImg">
   <img src="./assets/images/home-section2-3.png" class="overlap-img" id="rightImg">
-  <div class="custom-text" id="text3" style="width:31vw;margin-top:-49%;margin-left:6vw;font-size:1.2rem">First, I must increase the synthesis of tryptophan.</div>
-  <div class="custom-text2" id='text4'>We're here to help!We will perform pathway optimization on your process of producing tryptophan from glucose.  </div>
+  <img src="./assets/images/home-section2-4.png" class="overlap-img" id="rightImg2">
 
 
   <!-- 三张 rise 图片 -->
   <img src="./assets/images/home-section3-4.png" class="rise-img" id="rise3-0">
   <img src="./assets/images/home-section3-1.png" class="rise-img" id="rise3-1">
-  <div class="custom-text3" id="text3-1">First, I must increase the synthesis of tryptophan.</div>
   <img src="./assets/images/home-section3-2.png" class="rise-img" id="rise3-2">
 
   <!-- 悲伤的两个图片 -->
   <img src="./assets/images/home-section3-3.png" class="rise-img" id="rise3-3">
   <img src="./assets/images/home-section3-left.png" class="rise-img" id="rise3-left">
-  <div class="custom-text" id="text3-left" style="opacity:0;width:40vw;font-size:0.9rem;top:60%;left:48%">My binding ability is too poor, the binding with the substrate is very unstable, I cannot help you convert NAS to MT. What should I do?</div>
   <img src="./assets/images/home-section3-right.png" class="rise-img" id="rise3-right">
-  <div class="custom-text4" id="text3-right1">We will help you build a biosensor and perform directed evolution on you to make your binding ability stronger.</div>
 
   <!-- NEFU_China -->
   <img src="./assets/images/home-section2-2.png" class="rise-img" id="rise4-1" style="left:62%">
-  <div class="custom-text4" id="text4-1">We will help you build a biosensor and perform directed evolution on you to make your binding ability stronger.</div>
+  <img src="./assets/images/home-section3-right2.png" class="rise-img" id="rise4-1-1">
 
   <!-- 开心的两张图片 -->
   <img src="./assets/images/home-section4-2.png" class="rise-img" id="rise4-2">
@@ -225,12 +218,11 @@
 
 </section>
 
-<section id="section5" class="d-flex justify-content-center align-items-center position-relative">
+<section id="section3" class="d-flex justify-content-center align-items-center position-relative">
   <img src="./assets/images/home-section5-1.png" class="img-stack" style="position: relative;">
   <img src="./assets/images/home-section5-2.png" class="img-stack"style=''>
-  <img src="./assets/images/home-section5-3.png" class="img-stack"style=''>
+  <img src="./assets/images/home-section5-3.png" class="img-stack"style='top:0%'>
   <img src="./assets/images/home-section5-4.png" class="img-stack"style=''>
-  <div class="custom-text" style="opacity:1;width:24vw;font-size:0.9rem;top:13%;left:48%">With your help, I will certainly achieve my dream faster to produce more melatonin!</div>
 
 <script src="/2025_NEFU-China/assets/gsap.min.js"></script>
 <script src="/2025_NEFU-China/assets/ScrollTrigger.min.js"></script>
@@ -251,11 +243,11 @@ const tl = gsap.timeline({
 });
 
 // --- 第1阶段：leftImg 右移，其他两张淡出 ---
-tl.to("#leftImg", { x: "150%", duration:1 });
-tl.to(["#centerImg","#rightImg","#text3","#text4"], { y:"-100vh", opacity:0, duration:1 }, "<");
+tl.to("#leftImg", { x: "200%", duration:1 });
+tl.to(["#centerImg","#rightImg","#rightImg2"], { y:"-100vh", opacity:0, duration:1 }, "<");
 
 // --- 分子式1进入 ---
-tl.to(["#rise3-0","#rise3-1","#text3-1"], { y:"-50vh", opacity:1, duration:4 });
+tl.to(["#rise3-0","#rise3-1"], { y:"-50vh", opacity:1, duration:4 });
 // --- 分子式1退场 ---
 tl.to("#rise3-1", { y:"-120vh", opacity:0, duration:4 }, ">+2");
 // --- 分子式2进入 ---
@@ -263,17 +255,17 @@ tl.to("#rise3-2", { y:"-50vh", opacity:1, duration:4 });
 // --- 分子式2退场 ---
 tl.to(["#rise3-2","#rise3-0","#text3-1"], { y:"-120vh", opacity:0, duration:4 }, ">+2");
 // --- 两悲伤进入 ---
-tl.to(["#rise3-3", "#rise3-left","#rise3-right","#text3-left","#text3-right1"], { y:"-50vh", opacity:1, duration:4 });
+tl.to(["#rise3-3", "#rise3-left","#rise3-right"], { y:"-50vh", opacity:1, duration:4 });
 // --- 大肠杆菌退场 ---
-tl.to(["#leftImg","#text3-right1"], {y:"-120vh",opacity:0,duration:4}, ">+2")
+tl.to(["#leftImg","#rise3-right"], {y:"-120vh",opacity:0,duration:4}, ">+2")
 // ---nefu进场---
-tl.to(["#rise4-1","#text4-1"],{y:"-50vh", opacity:1, duration:4 })
+tl.to(["#rise4-1","#rise4-1-1"],{y:"-50vh", opacity:1, duration:4 })
 // --- 两悲伤退场 ---
 tl.to(["#rise3-3","#rise3-left","#text3-left"],{y:"-120vh", opacity:1, duration:4 }, ">+2")
 // --- 两开心进场 ---
 tl.to("#rise4-2",{y:"-50vh",opacity:1, duration:4 })
 // --- 全隐藏 ---
-tl.to(["#rise4-1","#rise4-2","#rise3-right","#text4-1"],{ opacity:1, duration:4 },">+2")
+tl.to(["#rise4-1","#rise4-2","#rise3-right","#text4-1"],{y:"-120vh", opacity:0, duration:4 },">+2")
 
 
 
@@ -306,64 +298,59 @@ window.addEventListener("resize", () => {
 
   </main>
 
-  <footer class="pt-5 pb-5 footer py-5 mt-5 bg-dark text-white">
-  <div class="container">
-    <div class="row mb-4">
-      <div class="col-lg-6 col-xs-12">
-        <h4 class="mb-3">Heading</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac ante mollis quam tristique convallis</p>
-      </div>
-      <div class="col-lg-3 col-xs-12">
-        <h4 class="mt-lg-0 mt-sm-3">Links</h4>
-        <ul class="m-2 p-2">
-          <li><a href="#">Lorem ipsum</a></li>
-          <li><a href="#">Nam mauris velit</a></li>
-          <li><a href="#">Etiam vitae mauris</a></li>
-          <li><a href="#">Fusce scelerisque</a></li>
-          <li><a href="#">Sed faucibus</a></li>
-          <li><a href="#">Mauris efficitur nulla</a></li>
-        </ul>
-      </div>
-      <div class="col-lg-3 col-xs-12">
-        <h4 class="mt-lg-0 mt-sm-4 mb-3">Contact</h4>
-        <p>22, Lorem ipsum dolor, consectetur adipiscing</p>
-        <p class="mb-0">(541) 754-3010</p>
-        <p>info@hsdf.com</p>
-        <!-- Social Icons -->
-        <div class="mt-2 d-flex gap-3">
-          <!-- 邮箱 -->
-          <a href="mailto:info@hsdf.com" target="_blank">
-            <img src="https://static.igem.wiki/teams/5974/footer/qq-email.webp" width="24" height="24" alt="邮箱">
-          </a>
-          <!-- 微信 -->
-          <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=Mzg5NTY1MzEwOQ==" target="_blank">
-            <img src="https://static.igem.wiki/teams/5974/footer/wechat.webp" width="24" height="24" alt="微信">
-          </a>
-          <!-- 小红书 -->
-          <a href="https://www.xiaohongshu.com/user/profile/67a5c29b0000000007003caf?xsec_token=YBkjEU-D3z1V_03-efveFtp0I46c48adlxcYP_vmDYuJ8%3D&xsec_source=app_share&xhsshare=WeixinSession&shareRedId=ODtDQUQ5OD02NzUyOTgwNjZIOTc2SD1N&apptime=1758101979&share_id=37bd072efc964789b685242f6847abe2&share_channel=wechat" target="_blank">
-            <img src="https://static.igem.wiki/teams/5974/footer/rednote.webp" width="24" height="24" alt="小红书">
-          </a>
-          <!-- Bilibili -->
-          <a href="https://space.bilibili.com/1859704945" target="_blank">
-            <img src="https://static.igem.wiki/teams/5974/footer/bilibili.webp" width="24" height="24" alt="Bilibili">
-          </a>
-          <!-- 抖音 -->
-          <a href="https://www.douyin.com/user/MS4wLjABAAAAQAnXJUEb5WzSxVKpKTI5qG31Qy97ivIZDcNC1SuA6K4ASUb0nCzFg7ZHCEAwQr2z?previous_page=app_code_link" target="_blank">
-            <img src="https://static.igem.wiki/teams/5974/footer/tiktalk.webp" width="24" height="24" alt="抖音">
-          </a>
-        </div>
-      </div>
-    </div>
-    <hr />
-    <!-- License & Repository -->
-    <div class="row mt-4">
-      <div class="col">
-        <p class="mb-0"><small>© 2025 - Content on this site is licensed under a <a class="subfoot" href="https://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 International license</a>.</small></p>
-        <p><small>The repository used to create this website is available at <a href="https://gitlab.igem.org/2025/nefu-china">gitlab.igem.org/2025/nefu-china</a>.</small></p>
-      </div>
-    </div>
-  </div>
-</footer>
+      <footer>
+		<div>
+			<div class="c-footer">
+				<div class="u-container">
+					<div class="u-hide-print">
+						<div class="c-footer__header">
+						</div>
+						<div class="c-footer__grid">
+							<div class="c-footer__group">
+								<h3 class="c-footer__heading">About us</h3>
+								<ul class="c-footer__list">
+									<li class="c-footer__item"><a data-track="click">
+                                        This team is composed of enthusiastic students from five different colleges and various majors. To spy out the secrets of directed evolution, a group of beginners are looking forward to creating extraordinary experiences and we did it.</a></li>
+								</ul>
+							</div>
+							<div class="c-footer__group">
+								<h3 class="c-footer__heading">About topic</h3>
+								<ul class="c-footer__list">
+									<li class="c-footer__item"><a data-track="click"> Directed Evolution of the NdmB Enzyme for the Synthesis of Paraxanthine.
+										</a></li>
+								</ul>
+							</div>
+							<div class="c-footer__group">
+								<h3 class="c-footer__heading">Quicklinks</h3>
+								<ul class="c-footer__list">
+                  <li class="c-footer__item"><a href="/2025_NEFU-China/project/background.html"
+											data-track="click" target="_blank">Background</a></li>
+                  <li class="c-footer__item"><a href="/2025_NEFU-China/project/design.html"
+											data-track="click" target="_blank">Design</a></li>
+                  <li class="c-footer__item"><a href="/2025_NEFU-China/project/results.html"
+											data-track="click" target="_blank">Result</a></li>
+								</ul>
+							</div>
+							<div class="c-footer__group">
+								<h3 class="c-footer__heading">Contact info</h3>
+								<ul class="c-footer__list">
+									<li class="c-footer__item"><a  data-track="click">
+                                        Email : iDEC-2025 NEFU-China</a></li>
+									<li class="c-footer__item"><a  data-track="click">
+                                        Address : Northeast Forestry University, Harbin, Heilongjiang 150040, P. R. China</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="c-corporate-footer">
+			<div class="u-container">
+				<p class="c-corporate-footer__legal">iDEC-2025 NEFU-China</p>
+			</div>
+		</div>
+	</footer>
 
 
   <script src="/2025_NEFU-China/assets/script.js"></script>
