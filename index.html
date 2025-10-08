@@ -7,8 +7,8 @@ title: Home page
 .body {
   background-color:#feffcd !important;
 }
-    #section1 {overflow:visible ; width:70%; margin:auto;position:relative; background-color:#eff7ff5c}
-    #section3 {overflow:visible ; position:relative; background-color:#eff7ff}
+    #section1 {overflow:visible ; width:70%; margin:auto;position:relative;margin-bottom:20vh}
+    #section3 {overflow:visible ; width:70%; margin:auto;position:relative; color:#eff7ff}
   .img-stack { position:absolute; width:100%; height:auto;}
     #section1 .text-overlay {
       position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);
@@ -27,10 +27,10 @@ title: Home page
   }
   /* 左侧图片特殊，用于右移 */
   #leftImg {
-    left:25%;
+    left:8%;
     position:absolute;
     transform:translateX(-50%);
-    width:30%;
+    width:40%;
     height:auto;
     object-fit:cover;
 
@@ -102,11 +102,7 @@ title: Home page
 <!-- Section1 -->
 <section id="section1" class="d-flex justify-content-center align-items-center position-relative">
   <img src="./assets/images/home-section1-1.png" class="img-stack" style="position: relative;">
-  <img src="./assets/images/home-section1-2.png" class="img-stack">
-  <img src="./assets/images/home-section1-3.png" class="img-stack">
-  <div class="custom-text" style="width:30vw;font-size:1.0vw;top:9%;left:64%">I am Escherichia coli. There are multiple pathways within my body to synthesize tryptophan, but I want to create more value. I've heard that tryptophan can be further synthesized into melatonin,I must strive to produce melatonin!
 </div>
-  <div class="custom-text"style="width:30vw;font-size:1.0vw;top:81%;left:48%" >I am melatonin. I can regulate circadian rhythms and sleep cycles, but now it is too difficult to produce me. At the same time, I am constrained by environmental, safety, and cost issues. I hope Escherichia coli. can achieve its goal!</div>
 </section>
 
 
@@ -115,26 +111,22 @@ title: Home page
   <img src="./assets/images/home-section2-1.png" class="overlap-img" id="leftImg">
   <img src="./assets/images/home-section2-2.png" class="overlap-img" id="centerImg">
   <img src="./assets/images/home-section2-3.png" class="overlap-img" id="rightImg">
-  <div class="custom-text" id="text3" style="width:31vw;margin-top:-49%;margin-left:6vw;font-size:1.2rem">First, I must increase the synthesis of tryptophan.</div>
-  <div class="custom-text2" id='text4'>We're here to help!We will perform pathway optimization on your process of producing tryptophan from glucose.  </div>
+  <img src="./assets/images/home-section2-4.png" class="overlap-img" id="rightImg2">
 
 
   <!-- 三张 rise 图片 -->
   <img src="./assets/images/home-section3-4.png" class="rise-img" id="rise3-0">
   <img src="./assets/images/home-section3-1.png" class="rise-img" id="rise3-1">
-  <div class="custom-text3" id="text3-1">First, I must increase the synthesis of tryptophan.</div>
   <img src="./assets/images/home-section3-2.png" class="rise-img" id="rise3-2">
 
   <!-- 悲伤的两个图片 -->
   <img src="./assets/images/home-section3-3.png" class="rise-img" id="rise3-3">
   <img src="./assets/images/home-section3-left.png" class="rise-img" id="rise3-left">
-  <div class="custom-text" id="text3-left" style="opacity:0;width:40vw;font-size:0.9rem;top:60%;left:48%">My binding ability is too poor, the binding with the substrate is very unstable, I cannot help you convert NAS to MT. What should I do?</div>
   <img src="./assets/images/home-section3-right.png" class="rise-img" id="rise3-right">
-  <div class="custom-text4" id="text3-right1">We will help you build a biosensor and perform directed evolution on you to make your binding ability stronger.</div>
 
   <!-- NEFU_China -->
   <img src="./assets/images/home-section2-2.png" class="rise-img" id="rise4-1" style="left:62%">
-  <div class="custom-text4" id="text4-1">We will help you build a biosensor and perform directed evolution on you to make your binding ability stronger.</div>
+  <img src="./assets/images/home-section3-right2.png" class="rise-img" id="rise4-1-1">
 
   <!-- 开心的两张图片 -->
   <img src="./assets/images/home-section4-2.png" class="rise-img" id="rise4-2">
@@ -142,12 +134,11 @@ title: Home page
 
 </section>
 
-<section id="section5" class="d-flex justify-content-center align-items-center position-relative">
+<section id="section3" class="d-flex justify-content-center align-items-center position-relative">
   <img src="./assets/images/home-section5-1.png" class="img-stack" style="position: relative;">
   <img src="./assets/images/home-section5-2.png" class="img-stack"style=''>
-  <img src="./assets/images/home-section5-3.png" class="img-stack"style=''>
+  <img src="./assets/images/home-section5-3.png" class="img-stack"style='top:0%'>
   <img src="./assets/images/home-section5-4.png" class="img-stack"style=''>
-  <div class="custom-text" style="opacity:1;width:24vw;font-size:0.9rem;top:13%;left:48%">With your help, I will certainly achieve my dream faster to produce more melatonin!</div>
 
 <script src="{{ '/assets/gsap.min.js' | relative_url }}"></script>
 <script src="{{ '/assets/ScrollTrigger.min.js' | relative_url}}"></script>
@@ -168,11 +159,11 @@ const tl = gsap.timeline({
 });
 
 // --- 第1阶段：leftImg 右移，其他两张淡出 ---
-tl.to("#leftImg", { x: "150%", duration:1 });
-tl.to(["#centerImg","#rightImg","#text3","#text4"], { y:"-100vh", opacity:0, duration:1 }, "<");
+tl.to("#leftImg", { x: "200%", duration:1 });
+tl.to(["#centerImg","#rightImg","#rightImg2"], { y:"-100vh", opacity:0, duration:1 }, "<");
 
 // --- 分子式1进入 ---
-tl.to(["#rise3-0","#rise3-1","#text3-1"], { y:"-50vh", opacity:1, duration:4 });
+tl.to(["#rise3-0","#rise3-1"], { y:"-50vh", opacity:1, duration:4 });
 // --- 分子式1退场 ---
 tl.to("#rise3-1", { y:"-120vh", opacity:0, duration:4 }, ">+2");
 // --- 分子式2进入 ---
@@ -180,17 +171,17 @@ tl.to("#rise3-2", { y:"-50vh", opacity:1, duration:4 });
 // --- 分子式2退场 ---
 tl.to(["#rise3-2","#rise3-0","#text3-1"], { y:"-120vh", opacity:0, duration:4 }, ">+2");
 // --- 两悲伤进入 ---
-tl.to(["#rise3-3", "#rise3-left","#rise3-right","#text3-left","#text3-right1"], { y:"-50vh", opacity:1, duration:4 });
+tl.to(["#rise3-3", "#rise3-left","#rise3-right"], { y:"-50vh", opacity:1, duration:4 });
 // --- 大肠杆菌退场 ---
-tl.to(["#leftImg","#text3-right1"], {y:"-120vh",opacity:0,duration:4}, ">+2")
+tl.to(["#leftImg","#rise3-right"], {y:"-120vh",opacity:0,duration:4}, ">+2")
 // ---nefu进场---
-tl.to(["#rise4-1","#text4-1"],{y:"-50vh", opacity:1, duration:4 })
+tl.to(["#rise4-1","#rise4-1-1"],{y:"-50vh", opacity:1, duration:4 })
 // --- 两悲伤退场 ---
 tl.to(["#rise3-3","#rise3-left","#text3-left"],{y:"-120vh", opacity:1, duration:4 }, ">+2")
 // --- 两开心进场 ---
 tl.to("#rise4-2",{y:"-50vh",opacity:1, duration:4 })
 // --- 全隐藏 ---
-tl.to(["#rise4-1","#rise4-2","#rise3-right","#text4-1"],{ opacity:1, duration:4 },">+2")
+tl.to(["#rise4-1","#rise4-2","#rise3-right","#text4-1"],{y:"-120vh", opacity:0, duration:4 },">+2")
 
 
 
