@@ -29,7 +29,6 @@ main .container::before{
   inset:8% 6% 12% 6%;
   background:#3f51b5;
   border-radius:12px;
-  transform:rotate(-6deg);
   z-index:0;
   box-shadow:0 10px 24px rgba(63,81,181,.25);
 }
@@ -40,7 +39,7 @@ main .box2{
   inset:6% 5% 10% 5%;
   background:linear-gradient(135deg,#64d8da,#2ca0a2);
   border-radius:12px;
-  transform:rotate(6deg);
+  transform:rotate(12deg);
   z-index:1;
 }
 
@@ -63,63 +62,50 @@ main .box4  /* 作为下方姓名标签 */{
 main .box3{ top:6%; left:-8%; }       /* 例如：Team Leader */
 main .box4{ bottom:6%; right:-8%; }   /* 例如：Enzhe Liu  */
 
-/********** 翻转：复用现有结构，无需新增 HTML **********/
-/* 将 .text 当作“正面”，.box1 当作“背面” */
+/* 两面公共设置：尺寸一致、不要在翻转时参与缩放 */
 main .text,
 main .box1{
   position:absolute;
-  inset:0;                     /* 两面都覆盖整卡片，便于对齐 */
+  inset:0;
   display:flex;
   align-items:center;
   justify-content:center;
-  backface-visibility:hidden;  /* 关键：隐藏背面 */
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;  /* Safari */
   transform-style:preserve-3d;
   transition:transform .8s ease;
-  z-index:2;                   /* 高于彩色框、低于标签 */
+  transform-origin:center center;
+  will-change: transform;
+  z-index:2;
 }
 
-/* 正面（图片） */
-main .text{
-  transform:rotateY(0deg);
-}
+/* 正面：初始可见 */
+main .text{ transform: rotateY(0deg); }
 
-/* 图片尺寸与示例图相近（居中，留白） */
-main .text img{
+/* 背面：初始化为 180°（背对），而不是 -180° */
+main .box1{
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  position: relative;
   width:85%;
+  height:70%;
+  background:#f0f4f8;
+  padding:1.2rem;
+  border-radius:12px;
+  text-align:center;
+  transform: rotateY(180deg);
+}
+
+/* 悬停：正面转走，背面转正 —— 两面大小保持一致 */
+main .container:hover .text{  transform: rotateY(-180deg); }
+main .container:hover .box1{  transform: rotateY(0deg); }
+
+/* 图片与背面盒尺寸一致（避免翻转时“跳一下”） */
+main .text img{
+  width:70%;
   height:70%;
   object-fit:cover;
   border-radius:8px;
   box-shadow:0 6px 18px rgba(0,0,0,.18);
-}
-
-/* 背面（介绍内容）：用 box1 承载 */
-main .box1{
-  background:#f0f4f8;
-  padding:1.2rem;
-  transform:rotateY(-180deg);  /* 初始化为背对 */
-  text-align:center;
-  border-radius:12px;
-}
-
-/* 背面文字（原有 .helvetica-text 可继续使用） */
-main .helvetica-text{
-  font-family:"Helvetica",sans-serif;
-  color:#123;
-  font-size:1rem;
-  line-height:1.7;
-  opacity:1;                   /* 背面显示就好，不再做淡入 */
-  transition:none;
-}
-
-/* 悬停触发翻转：正面转走，背面转正 */
-main .container:hover .text{  transform:rotateY(180deg); }
-main .container:hover .text{  transform:rotateY(0deg);   }
-
-/******** 响应式（可按需微调） ********/
-@media (max-width:1200px){
-  main .box{ grid-template-columns:repeat(2,1fr); gap:4rem; }
-}
-@media (max-width:720px){
-  main .box{ grid-template-columns:1fr; gap:2rem; max-width:94%; }
-  main .box3, main .box4{ font-size:1rem; padding:.45rem 1rem; }
 }
