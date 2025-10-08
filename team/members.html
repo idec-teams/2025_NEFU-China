@@ -2,8 +2,13 @@
 layout: default
 title: Evolutionary Pathways
 ---
+
+
+
 <!DOCTYPE html>
-<link href="../assets/members.css">
+<head>
+<link href="{{ '/assets/members.css' | relative_url}}" rel="stylesheet">
+<link href="{{ url_for('static', filename='helvetica.css') }}" rel="stylesheet">
 <style>
   
 /* 轮播容器：占屏幕一半并居中 */
@@ -43,44 +48,548 @@ title: Evolutionary Pathways
   95%  { transform: translateX(-75%); }    /* 停留在第4张 */
   100% { transform: translateX(0%); }      /* 回到第1张 */
 }
+.content {
+padding: 0px;
+max-width: 100%;
+margin: 0 0;
+background: #FFFDDC;
+}
 
 
 </style>
 </head>
 
 <body>
-
+		<main class="content">    
   <div class="carousel">
 
     <div class="carousel-inner">
-        <img src="../assets/images/idecteam1.jpg" alt="Image 1">
-        <img src="../assets/images/idecteam2.jpg" alt="Image 2">
-        <img src="../assets/images/idecteam3.jpg" alt="Image 3">
-        <img src="../assets/images/idecteam3.jpg" alt="Image 4">
+        <img src="https://static.igem.wiki/teams/5974/members/team1.webp" alt="Image 1">
+        <img src="https://static.igem.wiki/teams/5974/members/team2-1.webp" alt="Image 2">
+        <img src="https://static.igem.wiki/teams/5974/members/team3-1.webp" alt="Image 3">
+        <img src="https://static.igem.wiki/teams/5974/members/team4-1.webp" alt="Image 4">
 
     </div>
-  </div>
+</div>
+
+    <main>
+        <div >
+          <h1 style="
+          font-family: Arial, Helvetica, sans-serif;
+          font-weight: bold;
+          font-size: 6rem;
+          text-align: center;
+          margin: 2rem 0;
+          color: #1a365d; /* 深色调文字，与浅黄背景高对比 */
+          /* 文字阴影（蓝绿色做立体效果） */
+          text-shadow: 
+            1px 1px 0px #4fd1c5, 
+            2px 2px 4px rgba(79, 209, 197, 0.3);
+        ">Members</h1>        </div>
+
+        <div class="box">
+          <div class="container">
+            <div class="box1">
+              <p class="helvetica-text" style="color: aliceblue;">Hi everyone, I'm Xiaoyi Li. As the deputy team leader, I'm a passionate biology major who has always been fascinated by life sciences. I'm dedicated to exploring the endless possibilities of our world with a positive and proactive attitude. I firmly believe that synthetic biology has the power to shape the future, and I'm excited to lead our team in collaborating, innovating, and tackling challenges—using the power of science to bring a positive and meaningful impact to humanity and society.</p>
+            </div>
+            <div class="box2"></div>
+            <div class="box3">
+              <div class="box-text">Team Leader</div>
+            </div>
+            <div class="unrotated">
+              <img src="https://static.igem.wiki/teams/5974/members/xiaoyi-li.webp">
+            </div>
+            <div class="box4 box-text">Xiaoyi Li</div>
+          </div>
+          <div class="container">
+              <div class="box1">
+                <p class="helvetica-text" style="color: aliceblue;">He's a wonderfully weird guy who brings abstract chaos to the lab one minute (occasionally losing his marbles), and is a passionate synbio evangelist the next. Also, it's worth mentioning he's an absolute pro at growing E. coli.</p>
+              </div>
+              <div class="box2"></div>
+              <div class="box3">
+                <div class="box-text">Team Leader</div>
+              </div>
+              <div class="unrotated">
+                <img src="https://static.igem.wiki/teams/5974/members/enzhe-liu.webp">
+              </div>
+              <div class="box4 box-text">Enzhe Liu</div>
+          </div>
+        </div> 
+
+        </div>
+
+
+        <div class="box">
+          <div class="container">
+            <div class="box1">
+              <p class="helvetica-text" style="color: aliceblue;">Hello everyone, my name is Heying Dai, and I go by Daisy. I'm currently a junior at Northeast Forestry University (NEFU), majoring in a field where my passions for microbiology, molecular biology, and synthetic biology converge.
+                  I am one of three wet lab leaders for our team, NEFU-CHINA. My primary responsibility is to spearhead the latter two steps of our biosynthetic pathway, focusing on the conversion of p-aminobenzoic acid (p-ABA) to 2-amino-4-acetylphenol (AAP). This role requires not only precision in the lab but also strong leadership to ensure our experiments proceed smoothly and effectively.
+                  As a determined Capricorn and an enthusiastic ENFJ, I'm driven to overcome challenges and foster a collaborative spirit within our team. I'm truly excited to be part of the iGEM community and look forward to connecting with and learning from all of you.</p>
+            </div>
+            <div class="box2"></div>
+            <div class="box3">
+              <div class="box-text">Group Leader</div>
+            </div>
+            <div class="unrotated">
+              <img src="https://static.igem.wiki/teams/5974/members/heying-dai.webp">
+            </div>
+            <div class="box4 box-text">Heying Dai</div>
+          </div>
+
+          <div class="container">
+            <div class="box1">
+              <p class="helvetica-text" style="color: aliceblue;">Zhihan Qu is an undergraduate student in the third year of the Biological Sciences programme at Northeast Forestry University. As a member of the NEFU-China wet lab team, she actively analyses and resolves numerous issues encountered during the team's experiments. Two consecutive years of work have not diminished her passion for biology; she still pauses to observe nature, feeling a deep-seated love and admiration for the diverse phenomena of life. (She particularly enjoys watching Ruddy Shelduck gliding through the water.)</p>
+            </div>
+            <div class="box2"></div>
+            <div class="box3">
+              <div class="box-text">Group Leader</div>
+            </div>
+            <div class="text">
+              <img src="https://static.igem.wiki/teams/5974/members/zhihan-qu.webp" class="rotated-90">
+            </div>
+            <div class="box4 box-text">Zhihan Qu</div>
+          </div>
+
+          <div class="container">
+            <div class="box1">
+              <p class="helvetica-text" style="color: aliceblue;">My name is Jinyu Bai, a student majoring in Biotechnology at Northeast Forestry University. I am delighted to participate in the iGEM competition as a member of NEFU-China. I have always had a deep passion for the discipline of biology and regard it as one of my life's pursuits. I hope to master biology well, use my knowledge to benefit the world, and bring more laughter and less suffering to it.</p>
+            </div>
+            <div class="box2"></div>
+            <div class="box3">
+              <div class="box-text">Group Leader</div>
+            </div>
+            <div class="text">
+              <img src="https://static.igem.wiki/teams/5974/members/jinyu-bai.webp" class="rotated-90">
+            </div>
+            <div class="box4 box-text">Jinyu Bai</div>
+          </div>
     
-  <div >
-        <h1 style="
-        font-family: Arial, Helvetica, sans-serif;
-        font-weight: bold;
-        font-size: 6rem;
-        text-align: center;
-        margin: 2rem 0;
-        color: #1a365d; /* 深色调文字，与浅黄背景高对比 */
-        /* 文字阴影（蓝绿色做立体效果） */
-        text-shadow: 
-          1px 1px 0px #4fd1c5, 
-          2px 2px 4px rgba(79, 209, 197, 0.3);
-      ">Members</h1>  </div>
+        </div>
+
+        <div class="box">
+
+          <div class="container">
+            <div class="box1">
+              <p class="helvetica-text" style="color: aliceblue;">A professional procrastinator who thrives (yes, really) in the final push before deadlines—paired with the unshakable habit of chasing every due date to the finish line. An experienced overthinker who zeros in on small details others might miss, and a consistent self-critic who uses that edge to tweak work until it feels right.
+                  Glad to be part of the team</p>
+            </div>
+            <div class="box2"></div>
+            <div class="box3">
+              <div class="box-text">Group Leader</div>
+          </div>
+            <div class="unrotated">
+              <img src="https://static.igem.wiki/teams/5974/members/xinying-wang.webp">
+            </div>
+            <div class="box4 box-text">Xinying Wang</div>
+          </div>
 
 
+            <div class="container">
+              <div class="box1"> 
+                <p class="helvetica-text" style="color: aliceblue;">Let’s make a difference together!</p>
+              </div>
+              <div class="box2"></div>
+              <div class="box3">
+                <div class="box-text">Students</div>
+              </div>
+              <div class="text">
+                <img src="https://static.igem.wiki/teams/5974/members/mengwen-wei.webp" class="rotated-90">
+              </div>
+              <div class="box4 box-text">MengWen Wei </div>
+            </div>
 
-      <main>
-        
+            <div class="container">
+              <div class="box1">
+                <p class="helvetica-text" style="color: aliceblue;">Hello everyone! I'm He Jiayao, a student majoring in Biological Sciences at Northeast Forestry University. As a member of the NEFU-China team, I am mainly responsible for the experimental part. IGEM is an unprecedented challenge and opportunity for me. I hope our project can contribute to alleviating the climate crisis</p>
+              </div>
+              <div class="box2"></div>
+              <div class="box3">
+                <div class="box-text">Students</div>
+              </div>
+              <div class="unrotated">
+                <img src="https://static.igem.wiki/teams/5974/members/jiayao-he.webp">
+              </div>
+              <div class="box4 box-text">Jiayao He</div>
+            </div>
+          </div>      
+        </div>
 
-      </main>
 
+        <div class="box">
+            <div class="container">
+              <div class="box1">
+                <p class="helvetica-text" style="color: aliceblue;">My name is Jiaying Jin，from the major of Computer Science and Technology.I am passionate about art and music.In my spare time, I engage in creative work.</p>
+              </div>
+              <div class="box2"></div>
+              <div class="box3">
+                <div class="box-text">Students</div>
+            </div>
+              <div class="text">
+                <img src="https://static.igem.wiki/teams/5974/members/jiaying-jin.webp" class="rotated-90">
+              </div>
+              <div class="box4 box-text">Jiaying Jin</div>
+            </div>
 
+            <div class="container">
+              <div class="box1">
+                <p class="helvetica-text" style="color: aliceblue;">My name is Adam,Chinese name is Zirui Zhou. I am a little socially awkward.Cats are my favorite.It is a great honor for me to participate in this competition which has broadened my horizons and enhanced my abilities.</p>
+              </div>
+              <div class="box2"></div>
+              <div class="box3">
+                <div class="box-text">Students</div>
+              </div>
+              <div class="text">
+                <img src="https://static.igem.wiki/teams/5974/members/zirui-zhou.webp" class="rotated-90">
+              </div>
+              <div class="box4 box-text">Zirui Zhou</div>
+            </div>
+
+            <div class="container">
+              <div class="box1">
+                <p class="helvetica-text" style="color: aliceblue;">Junyu Pan, an undergraduate student majoring in Biotechnology at Aulin College, NortheastForestry University, is very hardworking and full of the passion to the scientific research.</p>
+              </div>
+              <div class="box2"></div>
+              <div class="box3">
+                <div class="box-text">Students</div>
+              </div>
+              <div class="text">
+                <img src="https://static.igem.wiki/teams/5974/members/junyu-pan.webp" class="rotated-90">
+              </div>
+              <div class="box4 box-text">Junyu Pan</div>
+            </div>
+          </div>      
+        </div>
+
+        <div class="box">
+            <div class="container">
+              <div class="box1">
+                <p class="helvetica-text" style="color: aliceblue;">I’m Kejia yao, a third-year undergraduate student at Northeast Forestry University majoring in Biological Sciences. I’m thrilled to be part of the NEFU-China team for the IGME competition! I’ve always been passionate about the wonders of biology and how it connects to real-world problems. Outside of class, you’ll usually find me diving into the latest scientific research or experimenting with different biology-related projects. I’m excited about the challenges ahead and can’t wait to collaborate with such talented people! Let’s make this competition an unforgettable experience.</p>
+              </div>
+              <div class="box2"></div>
+              <div class="box3">
+                <div class="box-text">Students</div>
+            </div>
+              <div class="text">
+                <img src="https://static.igem.wiki/teams/5974/members/kejia-yao.webp" class="rotated-90">
+              </div>
+              <div class="box4 box-text">Kejia Yao</div>
+            </div>
+
+            <div class="container">
+              <div class="box1">
+                <p class="helvetica-text" style="color: aliceblue;">My name is Qiuxuan Pan, a third-year undergraduate student majoring in Biotechnology at Northeast Forestry University. As a member of my iGEM team, I was mainly responsible for project promotion and media production. My contributions included planning and producing the promotional film and iGEM promotion video, scriptwriting, storyboarding, filming, and editing with voiceovers and special effects.
+                    I also designed PowerPoint presentations, created visual content, and documented various offline activities such as the College Entrance Exam blessing video, campus open day, and the "Creator Program." In addition, I supported public outreach by providing multimedia materials for WeChat posts and other communications. Through these tasks, I aimed to effectively present our project to both the scientific community and the public.</p>
+              </div>
+              <div class="box2"></div>
+              <div class="box3">
+                <div class="box-text">Students</div>
+              </div>
+              <div class="unrotated">
+                <img src="https://static.igem.wiki/teams/5974/members/qiuxuan-pan.webp">
+              </div>
+              <div class="box4 box-text">Qiuxuan Pan</div>
+            </div>
+            <div class="container">
+              <div class="box1">
+                <p class="helvetica-text" style="color: aliceblue;">Hello, I'm Luo Shaotong, a dedicated Biotechnology student and a passionate member of the iGEM team. I thrive on challenging myself across both dry and wet lab domains, embracing diverse roles from designing human practices activities to conducting meticulous experimental procedures.
+                    My approach to science is hands-on and detail-oriented—whether I'm documenting experiments with care, communicating complex ideas clearly, or iterating on feedback to improve outcomes. Through iGEM, I've not only strengthened my technical and organizational skills but also deepened my passion for laboratory work and interdisciplinary collaboration.
+                    I take pride in being a versatile and committed team player who values both creativity and rigor in the pursuit of meaningful scientific innovation.</p>
+              </div>
+              <div class="box2"></div>
+              <div class="box3">
+                <div class="box-text">Students</div>
+              </div>
+              <div class="unrotated">
+                <img src="https://static.igem.wiki/teams/5974/members/shaotong-luo.webp">
+              </div>
+              <div class="box4 box-text">Shaotong Luo</div>
+            </div>
+          </div>      
+        </div>
+
+        <div class="box">
+            <div class="container">
+              <div class="box1">
+                <p class="helvetica-text" style="color: aliceblue;">Hello everyone! My name is Xu Su. I come from Hefei, Anhui Province, China, and I’m now studying at Northeast Forestry University. Plants, chemistry and fish are my great fascinations. When I’m not in the lab, you’ll often find me singing in the choir, playing table tennis, swimming or working out in the gym. I’m excited to be here and look forward to friendly conversations, making lots of new friends, and learning everything I can about synthetic biology together with all of you!
+                </p>
+              </div>
+              <div class="box2"></div>
+              <div class="box3">
+                <div class="box-text">Students</div>
+            </div>
+              <div class="text">
+                <img src="https://static.igem.wiki/teams/5974/members/suxu.webp" class="rotated-90">
+              </div>
+              <div class="box4 box-text">Su Xu</div>
+            </div>
+
+            <div class="container">
+              <div class="box1">
+                <p class="helvetica-text" style="color: aliceblue;">Hello everyone! I am Xianhao Li, a member of the NEFU-China team from Northeast Forestry University. I come from the coastal city of Qingdao in Shandong Province, China.
+                    My MBTI personality type is ENFJ, also known as “The Protagonist,” which means I am enthusiastic, empathetic, and highly motivated by values and human connections. It is my sincere wish to see a world filled with peace and happiness for all. I hope each one of us continues to grow and become a better version of ourselves.
+                    I am truly excited and honored to participate in this year’s iGEM competition alongside such brilliant and motivated individuals. Wishing all teams a successful and inspiring journey. May our work in synthetic biology contribute positively to humanity and bring meaningful advances to our world!</p>
+              </div>
+              <div class="box2"></div>
+              <div class="box3">
+                <div class="box-text">Students</div>
+              </div>
+              <div class="text">
+                <img src="https://static.igem.wiki/teams/5974/members/xianhao-li.webp" class="rotated-90">
+              </div>
+              <div class="box4 box-text">Xianhao Li</div>
+            </div>
+
+            <div class="container">
+              <div class="box1">
+                <p class="helvetica-text" style="color: aliceblue;">Hi everyone, I'm Ziyue Xu. As a dry lab member of the team, I am deeply passionate about synthetic biology and committed to driving our project forward through rigorous research and collaborative effort. I believe in using science to create meaningful and sustainable impacts on society and the environment.</p>
+              </div>
+              <div class="box2"></div>
+              <div class="box3">
+                <div class="box-text">Students</div>
+            </div>
+              <div class="unrotated">
+                <img src="https://static.igem.wiki/teams/5974/members/ziyue-xu.webp">
+              </div>
+              <div class="box4 box-text">Ziyue Xu</div>
+            </div>
+    
+        </div>
+
+        <div class="box">
+          <div class="container">
+            <div class="box1">
+              <p class="helvetica-text" style="color: aliceblue;">Haoxiang Lu, is an undergraduate student majoring in Biotechnology at Aulin College, Northeast Forestry University.I am very interested in biology and have been following news and new technologies related to the field of biology.</p>
+            </div>
+            <div class="box2"></div>
+            <div class="box3">
+              <div class="box-text">Students</div>
+          </div>
+            <div class="text">
+              <img src="https://static.igem.wiki/teams/5974/members/haoxiang-lu.webp" class="rotated-90">
+            </div>
+            <div class="box4 box-text">Haoxiang Lu</div>
+          </div>
+
+            <div class="container">
+              <div class="box1">
+                <p class="helvetica-text" style="color: aliceblue;">Hello everyone, I am He Xinyu, currently a sophomore majoring in biological science at Northeast Forestry University, and a member of the IGEM wet experiment team.I like exciting amusement projects, like daydreaming, like reading novels with light music, like the feeling of blowing wind but not like running, like shopping, like learning with partner... I want to say to myself, I hope you can look forward more actively every day. Don't be entangled, be decisive, and it's best to have a little more planning~</p>
+              </div>
+              <div class="box2"></div>
+              <div class="box3">
+                <div class="box-text">Students</div>
+              </div>
+              <div class="text">
+                <img src="https://static.igem.wiki/teams/5974/members/xinyu-he.webp" class="rotated-90">
+              </div>
+              <div class="box4 box-text">Xinyu He</div>
+            </div>
+            <div class="container">
+              <div class="box1">
+                <p class="helvetica-text" style="color: aliceblue;">Name: Xuran Bai Age: 20Message: An introvert, hoping to be braver every day than the day before</p>
+              </div>
+              <div class="box2"></div>
+              <div class="box3">
+                <div class="box-text">Students</div>
+              </div>
+              <div class="unrotated">
+                <img src="https://static.igem.wiki/teams/5974/members/xuran-bai.webp">
+              </div>
+              <div class="box4 box-text">Xuran Bai</div>
+            </div>
+          </div>      
+        </div>
+
+        <div class="box">
+            <div class="container">
+              <div class="box1">
+                <p class="helvetica-text" style="color: aliceblue;">Hi, I’m Zhong Yina, a freshman in Biological Sciences (Class of 2024) at Northeast Forestry University. In our iGEM team, I work in the wet lab, where I enjoy turning ideas into experiments and learning new skills every day.Besides pipettes and Petri dishes, you’ll often find me helping out with Human Practice, especially in promotion and outreach. For me, iGEM is not only about science—it’s also about teamwork, creativity, and making biology fun and meaningful for everyone. I can’t wait to keep exploring synthetic biology together with my teammates and share our journey with the world!</p>
+              </div>
+              <div class="box2"></div>
+              <div class="box3">
+                <div class="box-text">Students</div>
+            </div>
+              <div class="text">
+                <img src="https://static.igem.wiki/teams/5974/members/yina-zhong.webp" class="rotated-90">
+              </div>
+              <div class="box4 box-text">Yina Zhong</div>
+            </div>
+
+            <div class="container">
+              <div class="box1">
+                <p class="helvetica-text" style="color: aliceblue;">I'm Yuhan Bai, an undergraduate majoring in Biological Science at Northeast Forestry University. I actively engage in biological experiments and love exploring in the lab. I’m cheerful, detail-oriented, and patient. I’m good at organizing experimental records and helping peers. Being a good listener, I support teammates warmly. I value integrity and responsibility, taking every task seriously. In my spare time, I read popular science books and take outdoor walks to stay focused. I’m passionate about teamwork and collective progress, always ready to contribute to the group.</p>
+              </div>
+              <div class="box2"></div>
+              <div class="box3">
+                <div class="box-text">Students</div>
+              </div>
+              <div class="text">
+                <img src="https://static.igem.wiki/teams/5974/members/yuhan-bai.webp" class="rotated-90">
+              </div>
+              <div class="box4 box-text">Yuhan Bai</div>
+            </div>
+
+            <div class="container">
+              <div class="box1">
+                <p class="helvetica-text" style="color: aliceblue;">Hey there! My name is Rain. I'm a classic ENFJ, which basically means my superpower is turning group projects into parties and fueling them with endless enthusiasm. I'm on a constant quest for the next big adventure, whether it's exploring a new idea or a new place on the map. The only thing I'm allergic to is boredom and routine—I'd rather troubleshoot a wild, unexpected problem than do the same thing twice. I am always on the road to finding meaning!</p>
+              </div>
+              <div class="box2"></div>
+              <div class="box3">
+                <div class="box-text">Students</div>
+              </div>
+              <div class="text">
+                <img src="https://static.igem.wiki/teams/5974/members/zhaokun-jiang.webp" class="rotated-90">
+              </div>
+              <div class="box4 box-text">Zhaokun Jiang</div>
+            </div>
+          </div>      
+        </div>
+
+        <div class="box">
+            <div class="container">
+              <div class="box1">
+                <p class="helvetica-text" style="color: aliceblue;">  Hello, everyone. My name is Zhang Zheng, and I am a male student currently studying at Northeast Forestry University. In daily life, I am optimistic and sincere. I always offer help to people around me whenever possible and get along well with my peers. I am a responsible person who strives to complete tasks excellently in both study and work. I am willing to make joint efforts with my partners to achieve common progress. In my spare time, I enjoy reading and occasionally play badminton with my friends. I will devote myself to the upcoming study and life with a more positive attitude and contribute my strength to the team's ultimate goal.</p>
+              </div>
+              <div class="box2"></div>
+              <div class="box3">
+                <div class="box-text">Students</div>
+            </div>
+              <div class="text">
+                <img src="https://static.igem.wiki/teams/5974/members/zheng-zhang.webp" class="rotated-90">
+              </div>
+              <div class="box4 box-text">Zheng Zhang</div>
+            </div>
+
+            <div class="container">
+              <div class="box1"> 
+                <p class="helvetica-text" style="color: aliceblue;">Hello, I'm Zuo Beizhi, an explorer willing to build dreams for scientific research. Scientific research is a sacred thing. The unknown always makes people both scared and curious. And I think both of these are the reasons that drive people to explore the truth. The unknown is really maddening. Perhaps it's not that easy to explore a thing thoroughly. The deeper one delves into a matter, the more confusing it becomes. But if one doesn't lose interest in the unknown, perseverance will be the key to opening the door to the truth.</p>
+              </div>
+              <div class="box2"></div>
+              <div class="box3">
+                <div class="box-text">Students</div>
+              </div>
+              <div class="text">
+                <img src="https://static.igem.wiki/teams/5974/members/beizhi-zuo.webp" class="rotated-90">
+              </div>
+              <div class="box4 box-text">Beizhi Zuo</div>
+            </div>
+
+            <div class="container">
+              <div class="box1">
+                <p class="helvetica-text" style="color: aliceblue;">Hello, I’m Zhexiang Zhao. I am enthusiastic about creating wiki pages in the IGEM team.I’m confident in my ability to perform at an optimal level and to complete work to the highest possible standard. Additionally, I’m an optimistic and encouraging boy. I often engage with historical narratives to broaden my knowledge and have a particular affinity for historical strategy games.</p>
+              </div>
+              <div class="box2"></div>
+              <div class="box3">
+                <div class="box-text">Students</div>
+              </div>
+              <div class="text">
+                <img src="https://static.igem.wiki/teams/5974/members/zhexiang-zhao.webp" class="rotated-90">
+              </div>
+              <div class="box4 box-text">Zhexiang Zhao</div>
+            </div>
+     
+        </div>
+
+        <div class="box">
+            <div class="container">
+              <div class="box1">
+					<p class="helvetica-text" style="color: aliceblue;">Hello everyone! I'm Teng Zhang, one of the Wiki members on our team, primarily responsible for website design and development. In my spare time, I enjoy exploring web development and visual design, hoping to bring our project to life with code and creativity. Throughout my iGEM journey, I've not only honed my technical skills but also experienced the power of teamwork. I hope our Wiki becomes the best showcase for our team's story!</p>	
+
+			  </div>
+              <div class="box2"></div>
+              <div class="box3">
+                <div class="box-text">Students</div>
+              </div>
+              <div class="text">
+                <img src="https://static.igem.wiki/teams/5974/members/teng-zhang.webp" class="rotated-90">
+              </div>
+              <div class="box4 box-text">Teng Zhang</div>
+            </div>
+          </div>      
+        </div>
+
+  
+        <div style="text-align: center; max-width: 80%; margin: 20px auto; padding: 20px;border-radius: 8px;">
+          <p style="font-size: 2rem; line-height: 1.8; color: #333;">
+              <strong>With deepest gratitude,</strong><br>
+              we thank our teachers for their inspiring guidance and unwavering support
+          </p>
+      </div>
+
+        <div class="box">
+          <div class="container">
+              <div class="box1">
+                  <p class="helvetica-text" style="color: aliceblue;"><b>Professional Expertise:</b><br>E. coli Metabolic Engineering, Synthetic Biology</p>
+              </div>
+              <div class="box2"></div>
+              <div class="box3">
+                  <div class="box-text">Primary PI</div>
+              </div>
+              <div class="unrotated">
+                  <img src="https://static.igem.wiki/teams/5974/members/pengchao-wang.webp">
+              </div>
+              <div class="box4 box-text">Pengchao Wang</div>
+          </div>
+      
+          <div class="container">
+              <div class="box1">
+                  <p class="helvetica-text" style="color: aliceblue;"><b>Professional Expertise:</b><br>Synthetic Biology, Natural Product Chemistry, Biosynthetic Pathway Elucidation of Secondary Metabolites, Heterologous Synthesis.</p>
+              </div>
+              <div class="box2"></div>
+              <div class="box3">
+                  <div class="box-text">Secondary PI</div>
+              </div>
+              <div class="unrotated">
+                  <img src="https://static.igem.wiki/teams/5974/members/chunqing-wang.webp">
+              </div>
+              <div class="box4 box-text">Chunqing Wang</div>
+          </div>
+      
+          <div class="container">
+              <div class="box1">
+                  <p class="helvetica-text" style="color: aliceblue;"><b>Research Focus:</b><br>The laboratory focuses on lignin, a core component of the plant secondary cell wall. We utilize model plants like Arabidopsis thaliana to investigate its biosynthesis and regulatory mechanisms, and to explore the role of lignin in plant growth, development, and plant-biotic/abiotic stress responses. Beyond studying the biological mechanisms of lignin biosynthesis and metabolism, the team is also dedicated to translating fundamental research findings into practical applications to enhance the quality and yield of forest, forage, and crop species.</p>
+              </div>
+              <div class="box2"></div>
+              <div class="box3">
+                  <div class="box-text">Instructor</div>
+              </div>
+              <div class="unrotated">
+                  <img src="https://static.igem.wiki/teams/5974/members/xin-li.webp">
+              </div>
+              <div class="box4 box-text">Xin Li</div>
+          </div>
+      </div>
+      
+      <div class="box">
+          <div class="container">
+              <div class="box1">
+                  <p class="helvetica-text" style="color: aliceblue;"><b>Research Focus:</b><br>Utilizing experimental materials such as birch, poplar, Manchurian ash, and ornamental kale, the research primarily centers on plant reproductive biology. It focuses specifically on the molecular regulatory mechanisms of self-incompatibility and interspecific hybridization incompatibility. The approaches include employing multi-omics methods to screen for key genes and signaling pathways controlling incompatibility; using gene editing and other techniques to elucidate gene function; and applying molecular biology methods to decipher the molecular regulatory mechanisms.</p>
+              </div>
+              <div class="box2"></div>
+              <div class="box3">
+                  <div class="box-text">Instructor</div>
+              </div>
+              <div class="unrotated">
+                  <img src="https://static.igem.wiki/teams/5974/members/xingguo-lan.webp">
+              </div>
+              <div class="box4 box-text">Xingguo Lan</div>
+          </div>
+      
+          <div class="container">
+              <div class="box1">
+                  <p class="helvetica-text" style="color: aliceblue;"><b>Professional Expertise:</b><br>Cell Biology, Developmental Biology, Molecular Biology.</p>
+              </div>
+              <div class="box2"></div>
+              <div class="box3">
+                  <div class="box-text">Instructor</div>
+              </div>
+              <div class="unrotated">
+                  <img src="https://static.igem.wiki/teams/5974/members/chunbo-wang.webp">
+              </div>
+              <div class="box4 box-text">Chunbo Teng</div>
+          </div>
+      </div>
+
+    </main>
 </body>
+
+		</main>

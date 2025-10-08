@@ -87,12 +87,16 @@ title: Design
     <div class="submenu">
       <a href="#part1">Part 1: Rational Metabolic Engineering</a>
       <a href="#part2">Part 2: Directed Evolution for Enhanced L-Trp Yield</a>
-      <a href="#part3">Part 3: Directed Evolution of AtCOMT Using Auxotrophy Biosensor</a>
     </div>
   </div>
 
-  <div class="broadside_element side3" >
-    <a href="#side3">References</a>
+  <div cladd="broadside_element side3">
+
+    <a href="#side3">Module 2: Directed Evolution of AtCOMT Using a Whole-Cell Biosensor </a>
+  </div>
+
+  <div class="broadside_element side4" >
+    <a href="#side4">References</a>
       <div class="submenu"></div>
   </div>
     
@@ -111,8 +115,8 @@ title: Design
   <h2 class="h2-custom mb-3" id="part1">Part 1: Rational Metabolic Engineering</h2>
   <p>
     To improve tryptophan yield, we engineered its metabolic pathway by overexpressing biosynthetic genes, mutating feedback-resistant alleles, and eliminating branch pathway genes.
-    Firstly, we designed overexpression plasmids <em>pTRP1</em> and <em>pTRP2</em> with feedback-resistant variants carrying the <em>trpES40F</em> mutation, rendering anthranilate synthase insensitive to inhibition; 
-    <em>pTRP3</em> further integrates <em>aroGfbr</em> and <em>serAfbr</em> for enhanced supply of precursors DAHP and L-serine.
+    Firstly, we designed overexpression plasmids <em>pTRP1</em> and <em>pTRP2</em> with feedback-resistant variants carrying the <em>trpE<sup>S40F</sup></em> mutation, rendering anthranilate synthase insensitive to inhibition; 
+    <em>pTRP3</em> further integrates <em>aroG<sup>fbr</sup></em> and <em>serA<sup>fbr</sup></em> for enhanced supply of precursors DAHP and L-serine.
   </p>
   <p>
     For flux redirection, we pruned competing pathways draining key intermediates (PEP, E4P, chorismate): Δ<em>ptsG</em> boosts PEP by modulating glucose uptake<sup>1</sup>; 
@@ -120,8 +124,7 @@ title: Design
     Additionally, we knocked out <em>trpR</em> to alleviate its feedback inhibition on the <em>trpEDCBA</em> operon, and deleted <em>tnaAB</em> to prevent the reuptake of extracellular tryptophan<sup>4</sup>.
   </p>
   <img src="{{ '/assets/images/design/pic2.png' | relative_url }}" class="my-3">
-
-  <h2 class="h2-custom mb-3" id="part2">Part 2: Directed Evolution for Enhanced L-Trp Yield</h2>
+  <h2 class="h2-custom mb-3">Part 2: Directed Evolution for Enhanced L-Trp Yield</h2>
   <p>
     Under low L-Trp conditions, decoding release factor 2 (RF2) specifically recognizes the UGA stop codon and promotes the cleavage of peptidyl-tRNA<sup>Pro</sup> at the peptidyl transferase center (PTC) in the P-site of the ribosome. 
     As a result, the ribosome rapidly dissociates from the nascent mRNA<sup>5</sup>. 
@@ -141,7 +144,9 @@ title: Design
     Then, the whole genome was analyzed using bioinformatics methods.
   </p>
   <img src="{{ '/assets/images/design/pic3.png' | relative_url }}" class="my-3">
-  <h2 class="h2-custom mb-3" id="part3">Part 3: Directed Evolution of AtCOMT Using Auxotrophy Biosensor</h2>
+</div>
+<div class="content-box" id="side3">
+  <h1 class="h1-custom mb-3">Module 2: Directed Evolution of AtCOMT Using a Whole-Cell Biosensor</h2>
   <p>
     Based on previous research, we designed a whole-cell biosensor by knocking out the <em>cysE</em> gene in <em>Escherichia coli</em><sup>7</sup>. 
     The resulting <em>E. coli ΔcysE</em> strain is unable to synthesize cysteine endogenously and cannot survive without external supplementation. 
@@ -158,7 +163,7 @@ title: Design
   <img src="{{ '/assets/images/design/pic4.png' | relative_url }}" class="my-3">
 </div>
 
-<div class="content-box" id="side3">
+<div class="content-box" id="side4">
   <h1 class="h1-custom mb-3">References</h1>
   <ol>
     <li>Gu, P., Yang, F., Kang, J., Wang, Q., & Qi, Q. (2012). One-step of tryptophan attenuator inactivation and promoter swapping to improve the production of L-tryptophan in <em>Escherichia coli</em>. <em>Microbial Cell Factories</em>, 11(1), 30. DOI: <a href="https://doi.org/10.1186/1475-2859-11-30" target="_blank">https://doi.org/10.1186/1475-2859-11-30</a></li>

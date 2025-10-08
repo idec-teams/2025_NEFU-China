@@ -1,0 +1,86 @@
+---
+layout: default
+title: Evolutionary Pathways
+---
+<!DOCTYPE html>
+<link href="../assets/members.css">
+<style>
+  
+/* 轮播容器：占屏幕一半并居中 */
+.carousel {
+  width: 100vw;           /* 占屏幕宽度的一半 */
+  max-width: 100%;      /* 可选：防止在大屏幕上过宽 */
+  margin: 0 auto;        /* 居中显示 */
+  overflow: hidden;
+  border-radius: 1rem;   /* 可选：添加圆角 */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* 可选：添加阴影 */
+}
+
+/* 内层图片容器 */
+.carousel-inner {
+  display: flex;
+  width: 400%;            /* 假设有4张图 */
+  animation: scroll 40s infinite;
+}
+
+/* 每张图片 */
+.carousel-inner img {
+  width: 25%;             /* 4张图等分 */
+  height: auto;           /* 保持比例 */
+  object-fit: cover;      /* 填满每一张的空间 */
+  border-radius: 1rem;    /* 图片圆角 */
+}
+
+/* 定义动画 */
+@keyframes scroll {
+  0%   { transform: translateX(0%); }
+  20%  { transform: translateX(0%); }      /* 停留在第1张 */
+  25%  { transform: translateX(-25%); }
+  45%  { transform: translateX(-25%); }    /* 停留在第2张 */
+  50%  { transform: translateX(-50%); }
+  70%  { transform: translateX(-50%); }    /* 停留在第3张 */
+  75%  { transform: translateX(-75%); }
+  95%  { transform: translateX(-75%); }    /* 停留在第4张 */
+  100% { transform: translateX(0%); }      /* 回到第1张 */
+}
+
+
+</style>
+</head>
+
+<body>
+
+  <div class="carousel">
+
+    <div class="carousel-inner">
+        <img src="../assets/images/idecteam1.jpg" alt="Image 1">
+        <img src="../assets/images/idecteam2.jpg" alt="Image 2">
+        <img src="../assets/images/idecteam3.jpg" alt="Image 3">
+        <img src="../assets/images/idecteam3.jpg" alt="Image 4">
+
+    </div>
+  </div>
+    
+  <div >
+        <h1 style="
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 6rem;
+        text-align: center;
+        margin: 2rem 0;
+        color: #1a365d; /* 深色调文字，与浅黄背景高对比 */
+        /* 文字阴影（蓝绿色做立体效果） */
+        text-shadow: 
+          1px 1px 0px #4fd1c5, 
+          2px 2px 4px rgba(79, 209, 197, 0.3);
+      ">Members</h1>  </div>
+
+
+
+      <main>
+        
+
+      </main>
+
+
+</body>
