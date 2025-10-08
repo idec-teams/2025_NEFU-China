@@ -1,175 +1,128 @@
-main {
-  font-size: 16px;
+/******** 基础布局（保留你的设置） ********/
+main { font-size: 16px; }
+
+main .box{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8rem;
+  width:100%;
+  max-width:90%;
+  margin:0 auto;
+  padding:2rem 0;
 }
 
-/* 三列布局 */
-main .box {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8rem;
-  width: 100%;
-  max-width: 90%;
-  margin: 0 auto;
-  padding: 2rem 0;
+main .container{
+  position:relative;
+  background:#fff;
+  border-radius:12px;
+  box-shadow:0 8px 20px rgba(0,0,0,.12);
+  aspect-ratio:2/3;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;              /* 防溢出 */
+  perspective:1200px;           /* 3D 透视——翻转关键 */
 }
 
-/* 外层容器 */
-main .container {
-  background: #fff;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  position: relative;
-  aspect-ratio: 2/3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/******** 斜叠彩色框（与示例图一致） ********/
+/* 深蓝底框（在最底层） */
+main .container::before{
+  content:"";
+  position:absolute;
+  inset:8% 6% 12% 6%;
+  background:#3f51b5;
+  border-radius:12px;
+  transform:rotate(-6deg);
+  z-index:0;
+  box-shadow:0 10px 24px rgba(63,81,181,.25);
 }
 
-/* ---------------------------------------- */
-/*           翻转容器 + 文字融合部分         */
-/* ---------------------------------------- */
-main .flip-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 80%;
-  width: 90%;
-  perspective: 1000px;
+/* 青色前框（略高一层） */
+main .box2{
+  position:absolute;
+  inset:6% 5% 10% 5%;
+  background:linear-gradient(135deg,#64d8da,#2ca0a2);
+  border-radius:12px;
+  transform:rotate(6deg);
+  z-index:1;
 }
 
-main .flipper {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
+/******** 顶/底“标签”样式（替代原先条带） ********/
+main .box3, /* 作为上方角色标签 */
+main .box4  /* 作为下方姓名标签 */{
+  position:absolute;
+  background:#a6d8ff;
+  color:#12458a;
+  font-weight:700;
+  font-size:1.1rem;
+  padding:.55rem 1.4rem;
+  border-radius:8px;
+  box-shadow:0 4px 12px rgba(0,0,0,.16);
+  z-index:4;                    /* 始终浮在最上层 */
+  display:flex; align-items:center; justify-content:center;
 }
 
-main .flip-container:hover .flipper {
-  transform: rotateY(180deg);
+/* 位置与示例图一致 */
+main .box3{ top:6%; left:-8%; }       /* 例如：Team Leader */
+main .box4{ bottom:6%; right:-8%; }   /* 例如：Enzhe Liu  */
+
+/********** 翻转：复用现有结构，无需新增 HTML **********/
+/* 将 .text 当作“正面”，.box1 当作“背面” */
+main .text,
+main .box1{
+  position:absolute;
+  inset:0;                     /* 两面都覆盖整卡片，便于对齐 */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  backface-visibility:hidden;  /* 关键：隐藏背面 */
+  transform-style:preserve-3d;
+  transition:transform .8s ease;
+  z-index:2;                   /* 高于彩色框、低于标签 */
 }
 
-/* 正面和背面 */
-main .front,
-main .back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border-radius: 0.5rem;
-  overflow: hidden;
+/* 正面（图片） */
+main .text{
+  transform:rotateY(0deg);
 }
 
-/* 正面：图片 + 文字 */
-main .front {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+/* 图片尺寸与示例图相近（居中，留白） */
+main .text img{
+  width:85%;
+  height:70%;
+  object-fit:cover;
+  border-radius:8px;
+  box-shadow:0 6px 18px rgba(0,0,0,.18);
 }
 
-main .front img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 0.5rem;
+/* 背面（介绍内容）：用 box1 承载 */
+main .box1{
+  background:#f0f4f8;
+  padding:1.2rem;
+  transform:rotateY(-180deg);  /* 初始化为背对 */
+  text-align:center;
+  border-radius:12px;
 }
 
-/* 文字叠加在图片上 */
-main .front .box-text {
-  position: absolute;
-  bottom: 8%;
-  left: 50%;
-  transform: translateX(-50%);
-  color: white;
-  font-size: 1.8rem;
-  font-weight: bold;
-  text-align: center;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-  letter-spacing: 1px;
-  pointer-events: none; /* 不影响鼠标事件 */
+/* 背面文字（原有 .helvetica-text 可继续使用） */
+main .helvetica-text{
+  font-family:"Helvetica",sans-serif;
+  color:#123;
+  font-size:1rem;
+  line-height:1.7;
+  opacity:1;                   /* 背面显示就好，不再做淡入 */
+  transition:none;
 }
 
-/* 背面：显示详细说明 */
-main .back {
-  background-color: #f0f4f8;
-  transform: rotateY(180deg);
-  padding: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+/* 悬停触发翻转：正面转走，背面转正 */
+main .container:hover .text{  transform:rotateY(180deg); }
+main .container:hover .box1{  transform:rotateY(0deg);   }
 
-main .back-text {
-  color: #333;
-  font-size: 1rem;
-  text-align: center;
-  line-height: 1.5;
+/******** 响应式（可按需微调） ********/
+@media (max-width:1200px){
+  main .box{ grid-template-columns:repeat(2,1fr); gap:4rem; }
 }
-
-/* ---------------------------------------- */
-/* 其他图形装饰（如 box1、box3、box4）保持不变 */
-/* ---------------------------------------- */
-main .box1 {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background-color: #435bbe;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-  text-align: center;
-}
-
-main .box2 {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background: linear-gradient(
-    to bottom right,
-    #64d8da,
-    #5bcfd1,
-    #4ec2c4,
-    #48bcbe,
-    #3cb0b2,
-    #2ca0a2
-  );
-  transform: rotateZ(10deg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-main .box3 {
-  position: absolute;
-  height: 3rem;
-  width: 70%;
-  background-color: #92d3fb;
-  top: 1.5rem;
-  left: -15%;
-}
-
-main .box4 {
-  position: absolute;
-  height: 10%;
-  width: 70%;
-  background-color: #92d3fb;
-  bottom: 1.5rem;
-  right: -15%;
-}
-
-main .helvetica-text {
-  font-family: "Helvetica", sans-serif;
-  color: aliceblue;
-  font-size: 1rem;
-  line-height: 1.5;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-
-main .container:hover .helvetica-text {
-  opacity: 1;
-  transition-delay: 0.5s;
+@media (max-width:720px){
+  main .box{ grid-template-columns:1fr; gap:2rem; max-width:94%; }
+  main .box3, main .box4{ font-size:1rem; padding:.45rem 1rem; }
 }
