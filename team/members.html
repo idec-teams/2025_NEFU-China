@@ -53,10 +53,10 @@ title: Evolutionary Pathways
   <div class="carousel">
 
     <div class="carousel-inner">
-        <img src="../assets/images/idecteam1.jpg" alt="Image 1">
-        <img src="../assets/images/idecteam2.jpg" alt="Image 2">
-        <img src="../assets/images/idecteam3.jpg" alt="Image 3">
-        <img src="../assets/images/idecteam3.jpg" alt="Image 4">
+        <img src="{{ '/assets/images/idecteam1.jpg' | relative_url }}" alt="Image 1">
+        <img src="{{ '/assets/images/idecteam2.jpg' | relative_url }}" alt="Image 2">
+        <img src="{{ '/assets/images/idecteam3.jpg' | relative_url }}" alt="Image 3">
+        <img src="{{ '/assets/images/idecteam4.jpg' | relative_url }}" alt="Image 4">
 
     </div>
   </div>
@@ -75,11 +75,34 @@ title: Evolutionary Pathways
           2px 2px 4px rgba(79, 209, 197, 0.3);
       ">Members</h1>  </div>
 
-
+"{{ '/assets/images/notebook-bg.png' | relative_url }}"
 
       <main>
+        <div class="box">
+          <div class="container">
+            <!-- 背面内容放这里（box1 = back） -->
+            <div class="box1">
+              <p class="helvetica-text">
+                I am the team leader of NFU-China 2025. I love synthetic biology and teamwork...
+              </p>
+            </div>
         
-
+            <!-- 青色倾斜前框（已在 CSS 中处理） -->
+            <div class="box2"></div>
+        
+            <!-- 角色/姓名标签（顶/底） -->
+            <div class="box3">Team Leader</div>
+            <div class="box4">Enzhe Liu</div>
+        
+            <!-- 正面图片（text = front） -->
+            <div class="text">
+              <img src="https://static.igem.wiki/teams/5974/members/enzhe-liu.webp" alt="Enzhe Liu">
+            </div>
+          </div>
+        </div>
+        
+        
+        
       </main>
 
 
