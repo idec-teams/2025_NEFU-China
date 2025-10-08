@@ -43,7 +43,7 @@ a { cursor: url("/2025_NEFU-China/assets/images/cursor.png") 2 2, auto; }
 @keyframes float2 { 0% { transform: translate(0, -20); }
   50% { transform: translate(0px, 20px); }
   100% { transform: translate(0, -20); } }
-.logo { padding-left: 10px; width: 50px; margin-right: 10px; }
+.logo { padding-left: 10px; width: 8vh; margin-right: 10px; }
 
 /* Navbar 和 Footer 背景 */
 .navbar { background-color: #D8BEFF !important; color: #3f425a; font-size: 2rem; }
